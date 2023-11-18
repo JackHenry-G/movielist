@@ -1,0 +1,149 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: darkgray;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: gold;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.navigation ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin-right: 10px;
+}
+
+.navigation a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: gold;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: gold;
+  padding-left: 5%;
+  font-size: 0.5rem;
+  background-color: black;
+  color: gold;
+}
+
+.content {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  color: gold;
+}
+
+.table-header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.table-header h3 {
+  margin-left: 5%;
+}
+
+.movietable {
+  width: 100%;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  background-color: gold;
+  color: black;
+}
+
+th {
+  background-color: black;
+  color: gold;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn {
+  background-color: darkgrey;
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+#add-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: gold;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 8px;
+  margin-right: 5%;
+}
+
+#add-button h2 {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  margin-bottom: 5px;
+  color: gold;
+}
+
+form input {
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid gold;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: gold;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: darkgoldenrod;
+}
