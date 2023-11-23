@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,11 +39,11 @@ public class MovieController {
     // TEST ------------
 
     @GetMapping("/") // test endpoint
-    public Movie getMovie(Model model) {
-        Movie movie = new Movie(2, "Matrix", "Action", 9.5);
+    public ResponseEntity<?> getMovie(Model model) {
+        // Movie movie = new Movie(2, "Matrix", "Action", 9.5);
         // model.addAttribute("moviename", movie.getName());
         // return "index.html";
-        return movie;
+        return ResponseEntity.ok("Hello, World");
     }
 
     @GetMapping("/movies/{movieId}") // return specific movie to view
