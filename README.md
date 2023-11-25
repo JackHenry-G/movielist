@@ -8,8 +8,6 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 - [Technologies](#technologies)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -21,12 +19,14 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 ## Technologies
 
 - **Backend:**
+
   - Spring Boot
   - Java
   - PostgreSQL (Database)
   - TMDb API
 
 - **Frontend:**
+
   - HTML
   - CSS
   - JavaScript
@@ -41,6 +41,7 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
    ```bash
    git clone https://github.com/JackHenry-G/movielist.git
    cd movielist
+   ```
 2. **Setup postgreSQL**
    Create a PostgreSQL database and update the app properties to the new database credentials.
 3. **Setup TMDb API Key**
@@ -54,10 +55,9 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 
 1. **Search for movies**
    Use the search functionality to search for movies from the TMDB database!
-3. **Rate movies**
+2. **Rate movies**
    After selecting a movie, provide a score to add it to your list!
-4. **View rankings**
+3. **View rankings**
    View which movies are your favourite of all time!
-5. **Cinema notifications (to come later)**
+4. **Cinema notifications (to come later)**
    Be notified when you're favourite ranked movies are in a cinema near you!
-
