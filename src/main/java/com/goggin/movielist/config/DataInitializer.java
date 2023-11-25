@@ -21,7 +21,7 @@ public class DataInitializer {
     public void initializeData() {
         // Check if the database is empty before adding an object
         if (this.movieRepository.count() == 0) {
-            Movie movie = new Movie(10, "La La Land", "Romance", 9.2);
+            Movie movie = new Movie(230423, "La La Land", "2016", 128, "Ryan Gosling is the man", "Romance", 9.2);
             this.movieRepository.save(movie);
             System.out.println("Default object added to the database for testing.");
         }

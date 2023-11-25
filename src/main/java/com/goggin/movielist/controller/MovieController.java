@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import com.goggin.movielist.exception.MovieWithThisTitleAlreadyExistsException;
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.service.MovieService;
+import com.goggin.movielist.service.TmdbService;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +36,9 @@ public class MovieController {
      */
     @Autowired
     private MovieService movieService;
+
+    @Autowired
+    private TmdbService tmdbService;
 
     // TEST ------------
 
@@ -74,12 +78,27 @@ public class MovieController {
         return "movieListHome.html";
     }
 
+    @GetMapping("/search") // return all movies in user's list
+    public String findAllMovies() {
+        return "searchTmdb.html";
+    }
+
     // ------------------------ Add a new movie -----------------------
 
     @GetMapping("/movies/add") // return form in for user to add a new movie
     public String showAddMovieForm(Model model) {
         model.addAttribute("movie", new Movie()); // intitialize empty movie object so that Thymeleaf has Movie
         return "addMovieForm.html";
+    }
+
+    @GetMapping("/movies/{tmdbMovieId}/add") // return form for user to add a new movie based on their chosen TMDB movie
+    public String showAddMovieForm(@PathVariable Integer tmdbMovieId, Model model) throws Exception {
+        // call tmdb to get all details of movie
+        Movie movie = tmdbService.getMovieFromTmdb(tmdbMovieId);
+
+        model.addAttribute("movie", movie);
+        return "addMovieForm.html";
+
     }
 
     @PostMapping("/movies") // create/add a new movie
