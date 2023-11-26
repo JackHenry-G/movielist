@@ -10,7 +10,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.goggin.movielist.model.Movie;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class TmdbService {
 
     @Autowired
@@ -41,7 +44,11 @@ public class TmdbService {
         // and map to Movie.class
         ResponseEntity<Movie> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, Movie.class);
         Movie movie = responseEntity.getBody();
-        System.out.println(movie.toString());
+
+        // the advantage of using @Slf4j is that if movie is null, it would not throw a
+        // nullpointerexception like a system.out.println would
+        // instead it handles 'null' values gracefully and it would say 'null'
+        log.info("Movie retrieved from tmdbService: {}", movie);
 
         return movie;
     }

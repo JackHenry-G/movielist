@@ -4,14 +4,9 @@ import org.springframework.stereotype.Service;
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.respositories.MovieRepository;
 
-import aj.org.objectweb.asm.Type;
-
 import com.goggin.movielist.exception.MovieWithThisTitleAlreadyExistsException;
 
-import io.micrometer.common.util.StringUtils;
-
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;;
+import io.micrometer.common.util.StringUtils;;
 
 // not using a MovieServiceImpl (Implementation) because this application is not complex enough to need different implementations in the future
 // therefore there is no need for the benefits that MovieService interface and MovieServiceImpl would bring like:
@@ -54,8 +49,6 @@ public class MovieService {
     // UPDATE operations ---------------
     public Movie updateMovie(Movie movie) {
         Movie dbMovie = this.movieRepository.findById(movie.getId()).get();
-
-        System.out.println("Rating = " + movie.getRating() + " - ");
 
         if (!StringUtils.isBlank(movie.getTitle())) {
             dbMovie.setTitle(movie.getTitle());

@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import lombok.ToString;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 // entities are POJOs that represent a table. So this will represent the Movie table
@@ -15,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "Movies")
+@ToString // use Lombok to generate a ToString method without having to write it ourselves
 public class Movie {
 
     @Id // used to mark it as the primary key of the table
@@ -116,19 +119,6 @@ public class Movie {
 
     public void setTagline(String tagline) {
         this.tagline = tagline;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", releaseYear='" + releaseYear + '\'' +
-                ", runtime=" + runtime +
-                ", tagline='" + tagline + '\'' +
-                ", genre='" + genre + '\'' +
-                ", rating=" + rating +
-                '}';
     }
 
 }

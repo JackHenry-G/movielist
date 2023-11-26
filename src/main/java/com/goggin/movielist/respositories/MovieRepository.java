@@ -1,7 +1,6 @@
 package com.goggin.movielist.respositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import com.goggin.movielist.model.Movie;
 import org.springframework.stereotype.Repository;
 

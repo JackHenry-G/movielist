@@ -1,0 +1,155 @@
+2023-11-26T13:49:45.878Z  INFO 10336 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 10336 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T13:49:45.883Z  INFO 10336 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T13:49:47.361Z  INFO 10336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T13:49:47.480Z  INFO 10336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interfaces.
+2023-11-26T13:49:48.768Z  INFO 10336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-26T13:49:48.794Z  INFO 10336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-26T13:49:48.795Z  INFO 10336 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-26T13:49:49.001Z  INFO 10336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-26T13:49:49.002Z  INFO 10336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3014 ms
+2023-11-26T13:49:49.364Z  INFO 10336 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T13:49:49.495Z  INFO 10336 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T13:49:49.500Z  INFO 10336 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T13:49:49.960Z  INFO 10336 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T13:49:50.022Z  INFO 10336 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T13:49:50.421Z  INFO 10336 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@722787b5
+2023-11-26T13:49:50.425Z  INFO 10336 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T13:49:50.518Z  WARN 10336 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-26T13:49:51.870Z  INFO 10336 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T13:49:51.899Z  WARN 10336 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-11-26T13:49:51.900Z  WARN 10336 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2023-11-26T13:49:51.902Z  WARN 10336 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-11-26T13:49:51.902Z  WARN 10336 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2023-11-26T13:49:51.961Z  INFO 10336 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T13:49:53.601Z  WARN 10336 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T13:49:54.267Z  INFO 10336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-26T13:49:54.282Z  INFO 10336 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 9.178 seconds (process running for 10.142)
+2023-11-26T13:49:54.287Z  INFO 10336 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-11-26T13:55:34.637Z  INFO 21008 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 21008 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T13:55:34.642Z  INFO 21008 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T13:55:36.202Z  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T13:55:36.346Z  INFO 21008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 1 JPA repository interfaces.
+2023-11-26T13:55:37.578Z  INFO 21008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-26T13:55:37.600Z  INFO 21008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-26T13:55:37.600Z  INFO 21008 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-26T13:55:37.845Z  INFO 21008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-26T13:55:37.845Z  INFO 21008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3101 ms
+2023-11-26T13:55:38.361Z  INFO 21008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T13:55:38.526Z  INFO 21008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T13:55:38.530Z  INFO 21008 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T13:55:39.026Z  INFO 21008 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T13:55:39.073Z  INFO 21008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T13:55:39.424Z  INFO 21008 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@722787b5
+2023-11-26T13:55:39.433Z  INFO 21008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T13:55:39.526Z  WARN 21008 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-26T13:55:40.874Z  INFO 21008 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T13:55:40.988Z  INFO 21008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T13:55:42.313Z  WARN 21008 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T13:55:43.046Z  INFO 21008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-26T13:55:43.062Z  INFO 21008 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 9.094 seconds (process running for 9.9)
+2023-11-26T13:55:43.069Z  INFO 21008 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-11-26T13:55:53.614Z  INFO 21008 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-26T13:55:53.614Z  INFO 21008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-26T13:55:53.614Z  INFO 21008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-11-26T13:56:02.566Z  INFO 21008 --- [http-nio-8080-exec-8] c.goggin.movielist.service.TmdbService   : Movie retrieved from tmdbService: Movie{id=695721, title='The Hunger Games: The Ballad of Songbirds & Snakes', releaseYear='2023', runtime=157, tagline='Everyone hungers for something.', genre='null', rating=0.0}
+2023-11-26T14:00:24.838Z  INFO 29972 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 29972 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T14:00:24.849Z  INFO 29972 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T14:00:26.296Z  INFO 29972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T14:00:26.380Z  INFO 29972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interfaces.
+2023-11-26T14:00:27.381Z  INFO 29972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-26T14:00:27.397Z  INFO 29972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-26T14:00:27.402Z  INFO 29972 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-26T14:00:27.593Z  INFO 29972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-26T14:00:27.595Z  INFO 29972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2664 ms
+2023-11-26T14:00:27.945Z  INFO 29972 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T14:00:28.107Z  INFO 29972 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T14:00:28.107Z  INFO 29972 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T14:00:28.520Z  INFO 29972 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T14:00:28.544Z  INFO 29972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T14:00:28.795Z  INFO 29972 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@68bd8ca7
+2023-11-26T14:00:28.798Z  INFO 29972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T14:00:28.870Z  WARN 29972 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-26T14:00:30.082Z  INFO 29972 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T14:00:30.161Z  INFO 29972 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T14:00:31.596Z  WARN 29972 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T14:00:32.170Z  INFO 29972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-26T14:00:32.188Z  INFO 29972 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 7.998 seconds (process running for 8.455)
+2023-11-26T14:00:32.195Z  INFO 29972 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-11-26T14:00:36.468Z  INFO 29972 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-26T14:00:36.469Z  INFO 29972 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-26T14:00:36.472Z  INFO 29972 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-11-26T14:00:41.603Z  INFO 29972 --- [http-nio-8080-exec-4] c.goggin.movielist.service.TmdbService   : Movie retrieved from tmdbService: Movie{id=695721, title='The Hunger Games: The Ballad of Songbirds & Snakes', releaseYear='2023', runtime=157, tagline='Everyone hungers for something.', genre='null', rating=0.0}
+2023-11-26T14:03:09.616Z  INFO 924 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 924 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T14:03:09.620Z  INFO 924 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T14:03:10.950Z  INFO 924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T14:03:11.055Z  INFO 924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interfaces.
+2023-11-26T14:03:12.177Z  INFO 924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-26T14:03:12.206Z  INFO 924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-26T14:03:12.208Z  INFO 924 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-26T14:03:12.407Z  INFO 924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-26T14:03:12.407Z  INFO 924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2705 ms
+2023-11-26T14:03:12.739Z  INFO 924 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T14:03:12.886Z  INFO 924 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T14:03:12.893Z  INFO 924 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T14:03:13.283Z  INFO 924 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T14:03:13.313Z  INFO 924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T14:03:13.564Z  INFO 924 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d1c933
+2023-11-26T14:03:13.566Z  INFO 924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T14:03:13.686Z  WARN 924 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-26T14:03:14.711Z  INFO 924 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T14:03:14.792Z  INFO 924 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T14:03:16.102Z  INFO 924 --- [main] c.g.movielist.config.DataInitializer     : Default movie, La La Land, added to the database for testing so there is a list initiatlized for the user
+2023-11-26T14:03:16.242Z  WARN 924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T14:03:16.824Z  INFO 924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-26T14:03:16.843Z  INFO 924 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 7.86 seconds (process running for 8.351)
+2023-11-26T14:03:16.852Z  INFO 924 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-11-26T14:04:21.976Z  INFO 21020 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 21020 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T14:04:21.981Z  INFO 21020 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T14:04:37.398Z  INFO 24856 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 24856 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T14:04:37.402Z  INFO 24856 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T14:04:38.572Z  INFO 24856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T14:04:38.693Z  INFO 24856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 1 JPA repository interfaces.
+2023-11-26T14:04:39.660Z  INFO 24856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-26T14:04:39.679Z  INFO 24856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-26T14:04:39.680Z  INFO 24856 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-26T14:04:39.872Z  INFO 24856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-26T14:04:39.874Z  INFO 24856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2380 ms
+2023-11-26T14:04:40.184Z  INFO 24856 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T14:04:40.334Z  INFO 24856 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T14:04:40.340Z  INFO 24856 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T14:04:40.843Z  INFO 24856 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T14:04:40.878Z  INFO 24856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T14:04:41.192Z  INFO 24856 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48dff674
+2023-11-26T14:04:41.196Z  INFO 24856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T14:04:41.262Z  WARN 24856 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-26T14:04:42.519Z  INFO 24856 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T14:04:42.594Z  INFO 24856 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T14:04:43.666Z  INFO 24856 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie{id=1, title='La La Land', releaseYear='2016', runtime=128, tagline='Ryan Gosling is the man', genre='Romance', rating=9.2}, added to the database for testing so there is a list initiatlized for the user
+2023-11-26T14:04:43.798Z  WARN 24856 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T14:04:44.261Z  INFO 24856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-26T14:04:44.272Z  INFO 24856 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 7.514 seconds (process running for 8.22)
+2023-11-26T14:04:44.278Z  INFO 24856 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-11-26T14:05:11.422Z  INFO 21104 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 21104 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-11-26T14:05:11.427Z  INFO 21104 --- [main] c.goggin.movielist.MovielistApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T14:05:12.841Z  INFO 21104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T14:05:12.970Z  INFO 21104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interfaces.
+2023-11-26T14:05:14.089Z  INFO 21104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-26T14:05:14.105Z  INFO 21104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-26T14:05:14.106Z  INFO 21104 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-26T14:05:14.305Z  INFO 21104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-26T14:05:14.306Z  INFO 21104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2802 ms
+2023-11-26T14:05:14.610Z  INFO 21104 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T14:05:14.757Z  INFO 21104 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T14:05:14.764Z  INFO 21104 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T14:05:15.204Z  INFO 21104 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T14:05:15.236Z  INFO 21104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T14:05:15.478Z  INFO 21104 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d1c933
+2023-11-26T14:05:15.480Z  INFO 21104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T14:05:15.544Z  WARN 21104 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-26T14:05:16.675Z  INFO 21104 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T14:05:16.752Z  INFO 21104 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T14:05:17.937Z  INFO 21104 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie(id=1, title=La La Land, releaseYear=2016, runtime=128, tagline=Ryan Gosling is the man, genre=Romance, rating=9.2), added to the database for testing so there is a list initiatlized for the user
+2023-11-26T14:05:18.079Z  WARN 21104 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T14:05:18.611Z  INFO 21104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-26T14:05:18.628Z  INFO 21104 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 7.819 seconds (process running for 8.302)
+2023-11-26T14:05:18.633Z  INFO 21104 --- [main] c.goggin.movielist.MovielistApplication  : App started running!

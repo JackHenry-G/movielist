@@ -63,6 +63,16 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+
+		<!-- Lombok is a java library to help reduce boilerplate code by using annotations -->
+		<!-- Generate teh code during compilation, saving from us having to write it -->
+		<!-- e.g. @ToString will put the code in for us without us having to do it-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
  </dependencies>
 
 	<build>
