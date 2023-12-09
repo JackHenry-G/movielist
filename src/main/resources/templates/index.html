@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie List App!</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <script th:src="@{/js/movielistscript.js}" defer></script>
+    <link rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/search">Search</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+      <p>Hello there!</p>
+    </div>
+
+    <footer class="footer">
+      <!-- Display Success Message -->
+      <div th:if="${success == null and error == null}" class="message">
+        <p>Messages will display here...</p>
+      </div>
+
+      <!-- Display Success Message -->
+      <div th:if="${success != null}" class="success-message">
+        <p th:text="${success}"></p>
+      </div>
+
+      <!-- Display Error Message -->
+      <div th:if="${error != null}" class="error-message">
+        <p th:text="${error}"></p>
+      </div>
+    </footer>
+  </body>
+</html>

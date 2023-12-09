@@ -11,15 +11,19 @@
     <header class="header">
       <nav class="navigation">
         <ul>
-          <li><a href="/movies">Home</a></li>
-          <li><a href="/search">Tmdb</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/search">Search</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="content">
       <div class="table-header">
-        <h3>Movies</h3>
+        <h3
+          th:text="${username} ? ${username} + '\'s movies' : 'No user!'"
+        ></h3>
+
         <a href="/movies/add" id="add-button"><h2>Add</h2></a>
       </div>
 

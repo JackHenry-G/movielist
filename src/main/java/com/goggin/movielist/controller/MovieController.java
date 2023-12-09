@@ -41,11 +41,11 @@ public class MovieController {
     // TEST ------------
 
     @GetMapping("/") // test endpoint
-    public ResponseEntity<?> getMovie(Model model) {
+    public String getMovie() {
         // Movie movie = new Movie(2, "Matrix", "Action", 9.5);
         // model.addAttribute("moviename", movie.getName());
-        // return "index.html";
-        return ResponseEntity.ok("Hello, World");
+        return "index.html";
+        // return ResponseEntity.ok("Hello, World");
     }
 
     @GetMapping("/movies/{movieId}") // return specific movie to view
@@ -73,7 +73,9 @@ public class MovieController {
         // return movieService.getAllMovies();
         Iterable<Movie> movielist = movieService.getAllMovies();
         model.addAttribute("movieList", movielist);
-        return "movieListHome.html";
+        model.addAttribute("username", "Parzival");
+
+        return "movieList.html";
     }
 
     @GetMapping("/search") // return all movies in user's list

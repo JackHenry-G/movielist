@@ -1,8 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        color: #495057;
+        text-align: center;
+        padding: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+        max-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 2em;
+        color: #e44d26;
+      }
+      h2 {
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: #343a40;
+      }
+      p {
+        margin-top: 20px;
+        font-size: 1em;
+        color: #6c757d;
+      }
+      a {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 30%; /* Set the width to auto */
+      }
+    </style>
+  </head>
   <body>
-    <h1>Something went wrong!</h1>
-    <h2>Our Engineers are on it</h2>
+    <h1>Error</h1>
+    <h2 th:text="${errorMessage}"></h2>
+    <p>If the issue persists, please contact support.</p>
     <a href="/">Go Home</a>
   </body>
 </html>
