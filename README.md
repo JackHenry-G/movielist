@@ -7,7 +7,6 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 - [Features](#features)
 - [Technologies](#technologies)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
 
 ## Features
 
@@ -45,19 +44,29 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 2. **Setup postgreSQL**
    Create a PostgreSQL database and update the app properties to the new database credentials.
 3. **Setup TMDb API Key**
-   Obtain a TMDb API key from TMDb Developer and replace YOUR_API_KEY in the application properties.
-4. **Build and run**
+   Obtain a TMDb API key from TMDb Developer and replace the key calling the API.
+4. **Build and run using docker**
+   To make things easier, the postgresql database is dockerized to save you from having to install postgres and configure a server.
+   The below commands will build an image of the movielist application and then using the docker-compose file to spin up a container
+   with the movielist application in one container connected to a postgresql database in another container.
+   Simply make sure you have docker installed and run the below commands to:
+   1. Spin up the postgres database in a docker container
+   2. Run the spring boot app
+      ![Docker setup][movielist_docker_setup.png]
+   ```bash
+   docker-compose up -d
    ./mvnw spring-boot:run
+   ```
 5. **Access the app**
    Open your browser and navigate to http://localhost:8080
 
-## Usage
+## Logs
 
-1. **Search for movies**
-   Use the search functionality to search for movies from the TMDB database!
-2. **Rate movies**
-   After selecting a movie, provide a score to add it to your list!
-3. **View rankings**
-   View which movies are your favourite of all time!
-4. **Cinema notifications (to come later)**
-   Be notified when you're favourite ranked movies are in a cinema near you!
+The logs are configured via the application.properties file to do the below but feel free to change them to how you prefer!
+I've set up the logs to only catch what's really needed, making them easy on the eyes with crucial info for better debugging. No more dealing with huge log files or drowning in heaps of old logs—I've got it streamlined for a log system that's a breeze to read and manage, making debugging a whole lot smoother.
+
+1. Only logs at info level and above are logged.
+2. Logs are directed to a file named "movielist.log"
+3. There is a rolling policy, which creates a new log file when the current one reaches 10MB
+4. The rolling policy also only retains two archived log files before deleting the oldest one
+5. There is a custom output to make them easier to read
