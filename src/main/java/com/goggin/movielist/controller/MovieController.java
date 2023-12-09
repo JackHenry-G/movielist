@@ -40,7 +40,7 @@ public class MovieController {
 
     // TEST ------------
 
-    @GetMapping("/") // test endpoint
+    @GetMapping("/") // home page
     public String getMovie() {
         // Movie movie = new Movie(2, "Matrix", "Action", 9.5);
         // model.addAttribute("moviename", movie.getName());

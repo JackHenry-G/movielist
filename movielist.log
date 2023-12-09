@@ -10207,3 +10207,149 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2023-12-09T21:52:18.507Z  INFO 31040 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-12-09T21:52:18.508Z  INFO 31040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-12-09T21:52:18.510Z  INFO 31040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-09T21:53:50.119Z  INFO 31040 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:53:50.147Z  INFO 31040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-09T21:53:50.159Z  INFO 31040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-09T21:54:04.756Z  INFO 27500 --- [main] com.goggin.movielist.HttpRequestTest     : Starting HttpRequestTest using Java 19.0.2 with PID 27500 (started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-09T21:54:04.759Z  INFO 27500 --- [main] com.goggin.movielist.HttpRequestTest     : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T21:54:05.767Z  INFO 27500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09T21:54:05.855Z  INFO 27500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2023-12-09T21:54:06.780Z  INFO 27500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2023-12-09T21:54:06.796Z  INFO 27500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T21:54:06.797Z  INFO 27500 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T21:54:06.882Z  INFO 27500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T21:54:06.883Z  INFO 27500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2095 ms
+2023-12-09T21:54:07.141Z  INFO 27500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09T21:54:07.277Z  INFO 27500 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-09T21:54:07.348Z  INFO 27500 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-09T21:54:07.789Z  INFO 27500 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-09T21:54:07.834Z  INFO 27500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-09T21:54:08.144Z  INFO 27500 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4aab7195
+2023-12-09T21:54:08.147Z  INFO 27500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-09T21:54:08.213Z  WARN 27500 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-09T21:54:09.497Z  INFO 27500 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-09T21:54:09.536Z  WARN 27500 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T21:54:09.536Z  WARN 27500 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2023-12-09T21:54:09.540Z  WARN 27500 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T21:54:09.540Z  WARN 27500 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2023-12-09T21:54:09.601Z  INFO 27500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:54:10.609Z  INFO 27500 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie(id=1, title=La La Land, releaseYear=2016, runtime=128, tagline=Ryan Gosling is the man, genre=Romance, rating=9.2), added to the database for testing so there is a list initiatlized for the user
+2023-12-09T21:54:10.751Z  WARN 27500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09T21:54:10.791Z  INFO 27500 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-09T21:54:11.289Z  INFO 27500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 62644 (http) with context path ''
+2023-12-09T21:54:11.299Z  INFO 27500 --- [main] com.goggin.movielist.HttpRequestTest     : Started HttpRequestTest in 7.061 seconds (process running for 8.672)
+2023-12-09T21:54:12.085Z  INFO 27500 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T21:54:12.086Z  INFO 27500 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T21:54:12.087Z  INFO 27500 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-09T21:54:12.628Z  INFO 27500 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.goggin.movielist.MovielistApplicationTests]: MovielistApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-09T21:54:12.631Z  INFO 27500 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.goggin.movielist.MovielistApplication for test class com.goggin.movielist.MovielistApplicationTests
+2023-12-09T21:54:12.685Z  INFO 27500 --- [main] c.g.movielist.MovielistApplicationTests  : Starting MovielistApplicationTests using Java 19.0.2 with PID 27500 (started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-09T21:54:12.686Z  INFO 27500 --- [main] c.g.movielist.MovielistApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T21:54:12.938Z  INFO 27500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09T21:54:12.950Z  INFO 27500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2023-12-09T21:54:13.053Z  INFO 27500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09T21:54:13.058Z  INFO 27500 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-09T21:54:13.064Z  INFO 27500 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-09T21:54:13.065Z  INFO 27500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-09T21:54:13.105Z  INFO 27500 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6321e29b
+2023-12-09T21:54:13.106Z  INFO 27500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-09T21:54:13.118Z  WARN 27500 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-09T21:54:13.176Z  INFO 27500 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-09T21:54:13.231Z  INFO 27500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:54:13.325Z  INFO 27500 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie(id=1, title=La La Land, releaseYear=2016, runtime=128, tagline=Ryan Gosling is the man, genre=Romance, rating=9.2), added to the database for testing so there is a list initiatlized for the user
+2023-12-09T21:54:13.383Z  WARN 27500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09T21:54:13.398Z  INFO 27500 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-09T21:54:13.512Z  INFO 27500 --- [main] c.g.movielist.MovielistApplicationTests  : Started MovielistApplicationTests in 0.867 seconds (process running for 10.885)
+2023-12-09T21:54:13.544Z  INFO 27500 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.goggin.movielist.WebMockTest]: WebMockTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-09T21:54:13.564Z  INFO 27500 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.goggin.movielist.MovielistApplication for test class com.goggin.movielist.WebMockTest
+2023-12-09T21:54:13.608Z  INFO 27500 --- [main] com.goggin.movielist.WebMockTest         : Starting WebMockTest using Java 19.0.2 with PID 27500 (started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-09T21:54:13.609Z  INFO 27500 --- [main] com.goggin.movielist.WebMockTest         : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T21:54:13.872Z  INFO 27500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09T21:54:13.882Z  INFO 27500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2023-12-09T21:54:13.968Z  INFO 27500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09T21:54:13.971Z  INFO 27500 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-09T21:54:13.978Z  INFO 27500 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-09T21:54:13.979Z  INFO 27500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-12-09T21:54:14.055Z  INFO 27500 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@19574274
+2023-12-09T21:54:14.056Z  INFO 27500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-12-09T21:54:14.069Z  WARN 27500 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-09T21:54:14.123Z  INFO 27500 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-09T21:54:14.177Z  INFO 27500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:54:14.252Z  INFO 27500 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie(id=1, title=La La Land, releaseYear=2016, runtime=128, tagline=Ryan Gosling is the man, genre=Romance, rating=9.2), added to the database for testing so there is a list initiatlized for the user
+2023-12-09T21:54:14.313Z  WARN 27500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09T21:54:14.324Z  INFO 27500 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-09T21:54:14.462Z  INFO 27500 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-12-09T21:54:14.463Z  INFO 27500 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-12-09T21:54:14.464Z  INFO 27500 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-12-09T21:54:14.475Z  INFO 27500 --- [main] com.goggin.movielist.WebMockTest         : Started WebMockTest in 0.901 seconds (process running for 11.847)
+2023-12-09T21:54:14.741Z  INFO 27500 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:54:14.777Z  INFO 27500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-09T21:54:14.791Z  INFO 27500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-09T21:54:14.808Z  INFO 27500 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:54:14.814Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T21:54:14.815Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2023-12-09T21:54:14.819Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T21:54:14.819Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2023-12-09T21:54:14.820Z  INFO 27500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-09T21:54:14.826Z  INFO 27500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-12-09T21:54:14.830Z  INFO 27500 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T21:54:14.833Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T21:54:14.834Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2023-12-09T21:54:14.837Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T21:54:14.838Z  WARN 27500 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2023-12-09T21:54:14.839Z  INFO 27500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-12-09T21:54:14.846Z  INFO 27500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-12-09T22:00:15.964Z  INFO 15760 --- [main] c.g.movielist.MovielistApplicationTests  : Starting MovielistApplicationTests using Java 19.0.2 with PID 15760 (started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-09T22:00:15.967Z  INFO 15760 --- [main] c.g.movielist.MovielistApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T22:00:17.153Z  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09T22:00:17.263Z  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 1 JPA repository interface.
+2023-12-09T22:00:18.063Z  INFO 15760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09T22:00:18.220Z  INFO 15760 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-09T22:00:18.297Z  INFO 15760 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-09T22:00:18.846Z  INFO 15760 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-09T22:00:18.892Z  INFO 15760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-09T22:00:19.246Z  INFO 15760 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15994b0b
+2023-12-09T22:00:19.249Z  INFO 15760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-09T22:00:19.321Z  WARN 15760 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-09T22:00:20.729Z  INFO 15760 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-09T22:00:20.762Z  WARN 15760 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T22:00:20.762Z  WARN 15760 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2023-12-09T22:00:20.766Z  WARN 15760 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T22:00:20.766Z  WARN 15760 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2023-12-09T22:00:20.853Z  INFO 15760 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T22:00:22.037Z  INFO 15760 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie(id=1, title=La La Land, releaseYear=2016, runtime=128, tagline=Ryan Gosling is the man, genre=Romance, rating=9.2), added to the database for testing so there is a list initiatlized for the user
+2023-12-09T22:00:22.368Z  WARN 15760 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09T22:00:22.411Z  INFO 15760 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-09T22:00:22.907Z  INFO 15760 --- [main] c.g.movielist.MovielistApplicationTests  : Started MovielistApplicationTests in 7.406 seconds (process running for 9.332)
+2023-12-09T22:00:23.662Z  INFO 15760 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.goggin.movielist.WebMockTest]: WebMockTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-09T22:00:23.674Z  INFO 15760 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.goggin.movielist.MovielistApplication for test class com.goggin.movielist.WebMockTest
+2023-12-09T22:00:23.710Z  INFO 15760 --- [main] com.goggin.movielist.WebMockTest         : Starting WebMockTest using Java 19.0.2 with PID 15760 (started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-09T22:00:23.710Z  INFO 15760 --- [main] com.goggin.movielist.WebMockTest         : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T22:00:23.954Z  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09T22:00:23.965Z  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2023-12-09T22:00:24.090Z  INFO 15760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09T22:00:24.094Z  INFO 15760 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-09T22:00:24.099Z  INFO 15760 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-09T22:00:24.100Z  INFO 15760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-09T22:00:24.141Z  INFO 15760 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@369958b0
+2023-12-09T22:00:24.142Z  INFO 15760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-09T22:00:24.152Z  WARN 15760 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-09T22:00:24.206Z  INFO 15760 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-09T22:00:24.271Z  INFO 15760 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T22:00:24.383Z  INFO 15760 --- [main] c.g.movielist.config.DataInitializer     : Default movie, Movie(id=1, title=La La Land, releaseYear=2016, runtime=128, tagline=Ryan Gosling is the man, genre=Romance, rating=9.2), added to the database for testing so there is a list initiatlized for the user
+2023-12-09T22:00:24.453Z  WARN 15760 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09T22:00:24.465Z  INFO 15760 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-09T22:00:24.593Z  INFO 15760 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-12-09T22:00:24.594Z  INFO 15760 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-12-09T22:00:24.596Z  INFO 15760 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-12-09T22:00:24.603Z  INFO 15760 --- [main] com.goggin.movielist.WebMockTest         : Started WebMockTest in 0.924 seconds (process running for 11.029)
+2023-12-09T22:00:25.306Z  INFO 15760 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T22:00:25.333Z  INFO 15760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-09T22:00:25.341Z  INFO 15760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-09T22:00:25.348Z  INFO 15760 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09T22:00:25.352Z  WARN 15760 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T22:00:25.352Z  WARN 15760 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2023-12-09T22:00:25.355Z  WARN 15760 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-09T22:00:25.356Z  WARN 15760 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2023-12-09T22:00:25.357Z  INFO 15760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-09T22:00:25.369Z  INFO 15760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
