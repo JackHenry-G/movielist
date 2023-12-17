@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <form th:action="@{/signup}" method="post">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        name="username"
+        placeholder="Enter username..."
+        required
+      />
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter password..."
+        required
+      />
+
+      <button type="submit">Register</button>
+
+      <!-- Display error message if 'error' parameter is present in the URL -->
+      <div th:if="${error}">
+        <p style="color: red" th:text="${error}"></p>
+      </div>
+    </form>
+  </body>
+</html>

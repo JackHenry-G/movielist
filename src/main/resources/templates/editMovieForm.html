@@ -20,10 +20,15 @@
     <div class="content">
       <form
         id="editForm"
-        th:action="@{/movies/{movieId}(movieId=${movie.id})}"
+        th:action="@{/movies/{movieId}(movieId=${movie.movie_id})}"
         method="post"
       >
-        <input type="hidden" id="movieId" name="id" th:value="${movie.id}" />
+        <input
+          type="hidden"
+          id="movieId"
+          name="id"
+          th:value="${movie.movie_id}"
+        />
 
         <label for="title">Title:</label>
         <input

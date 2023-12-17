@@ -3,8 +3,8 @@ function deleteRow(movieid) {
     // make AJAX, asynchronous javascript, request to the stprng boot endpoint
     // to to delete the row
     // got to the specified endpoint with the ID as a path parameter
-    fetch("/movies/" + movieid, {
-      method: "DELETE", // specify it is a DELELTE CRUD type
+    fetch("/movies/" + movieid + "/remove", {
+      method: "POST", // specify it is a DELELTE CRUD type
     })
       .then((response) => {
         if (response.ok) {

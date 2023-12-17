@@ -1,12 +1,14 @@
 package com.goggin.movielist.service;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
 import com.goggin.movielist.model.Movie;
+import com.goggin.movielist.model.MovieConnection;
+import com.goggin.movielist.model.User;
+import com.goggin.movielist.respositories.MovieConnectionRepository;
 import com.goggin.movielist.respositories.MovieRepository;
 
-import com.goggin.movielist.exception.MovieWithThisTitleAlreadyExistsException;
-
-import io.micrometer.common.util.StringUtils;;
+import io.micrometer.common.util.StringUtils;
 
 // not using a MovieServiceImpl (Implementation) because this application is not complex enough to need different implementations in the future
 // therefore there is no need for the benefits that MovieService interface and MovieServiceImpl would bring like:
@@ -19,27 +21,40 @@ import io.micrometer.common.util.StringUtils;;
 @Service
 public class MovieService {
     private final MovieRepository movieRepository;
+    private final MovieConnectionRepository movieConnectionRepository;
+    private final MovieConnectionService movieConnectionService;
 
-    public MovieService(MovieRepository movieRepository) {
+    public MovieService(MovieRepository movieRepository, MovieConnectionRepository movieConnectionRepository,
+            MovieConnectionService movieConnectionService) {
         this.movieRepository = movieRepository;
+        this.movieConnectionRepository = movieConnectionRepository;
+        this.movieConnectionService = movieConnectionService;
     }
 
     // CREATE operations ---------------
-    public Movie addMovieToList(Movie movie) throws Exception {
-        if (this.movieRepository.existsByTitle(movie.getTitle())) {
-            throw new MovieWithThisTitleAlreadyExistsException("Movie with this title already exists in your list!");
-        } else {
-            return this.movieRepository.save(movie);
+    public Movie addMovieToUsersList(User user, Movie movie, double rating) throws Exception {
+
+        // if movie from TMDB API already exists in our DB, don't add again
+        Movie dbMovie = this.movieRepository.findByTitle(movie.getTitle());
+        if (dbMovie == null) {
+            dbMovie = this.movieRepository.save(movie);
         }
+
+        // create connection, assign a rating and associate with use
+        MovieConnection movieConnection = new MovieConnection(user, dbMovie, rating);
+        this.movieConnectionService.saveMovieConnection(movieConnection);
+
+        return dbMovie;
     }
 
     public Iterable<Movie> addMultipleMoviesToList(Iterable<Movie> movies) {
         return this.movieRepository.saveAll(movies);
     }
 
-    // READ operations ---------------
-    public Iterable<Movie> getAllMovies() {
-        return this.movieRepository.findAllByOrderByRatingDesc();
+    public List<MovieConnection> getMovieConnectionsByUsernameInRatingOrder(String username) {
+        List<MovieConnection> movieConnections = movieConnectionRepository
+                .findByUser_UsernameOrderByRatingDesc(username);
+        return movieConnections;
     }
 
     public Movie getMovieById(Integer id) {
@@ -48,7 +63,7 @@ public class MovieService {
 
     // UPDATE operations ---------------
     public Movie updateMovie(Movie movie) {
-        Movie dbMovie = this.movieRepository.findById(movie.getId()).get();
+        Movie dbMovie = this.movieRepository.findById(movie.getMovie_id()).get();
 
         if (!StringUtils.isBlank(movie.getTitle())) {
             dbMovie.setTitle(movie.getTitle());
@@ -56,9 +71,10 @@ public class MovieService {
         if (!StringUtils.isBlank(movie.getGenre())) {
             dbMovie.setGenre(movie.getGenre());
         }
-        if (movie.getRating() != 0.0) {
-            dbMovie.setRating(movie.getRating());
-        }
+
+        // if (movie.getRating() != 0.0) {
+        // dbMovie.setRating(movie.getRating());
+        // }
 
         return this.movieRepository.save(dbMovie);
     }
@@ -71,8 +87,4 @@ public class MovieService {
         }
         return false;
     }
-
-    // public Movie findById(Integer id) {
-    // return new Movie(id, "Jurassic Park", "Thriller");
-    // }
 }

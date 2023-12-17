@@ -1,52 +1,141 @@
 package com.goggin.movielist.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
-import com.goggin.movielist.exception.MovieWithThisTitleAlreadyExistsException;
+import java.security.Principal;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import com.goggin.movielist.model.Movie;
+import com.goggin.movielist.model.MovieConnection;
+import com.goggin.movielist.service.MovieConnectionService;
 import com.goggin.movielist.service.MovieService;
 import com.goggin.movielist.service.TmdbService;
+import com.goggin.movielist.service.UserService;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller // this is used for returning views, an interprets it as the name of the view
-// @RestController // is tailored for JSON so treats it as a response body, not
-// a view name
+@Controller
 public class MovieController {
 
-    /*
-     * @Autowired creates an instance of the movie service to be used
-     * essentially replaces having to use a constructor like
-     * public MovieController(MovieService movieService) {
-     * this.movieService = movieService;
-     * }
-     */
+    @Autowired
+    private UserService userService;
+
     @Autowired
     private MovieService movieService;
 
     @Autowired
     private TmdbService tmdbService;
 
-    // TEST ------------
+    @Autowired
+    private MovieConnectionService movieConnectionService;
 
     @GetMapping("/") // home page
     public String getMovie() {
-        // Movie movie = new Movie(2, "Matrix", "Action", 9.5);
-        // model.addAttribute("moviename", movie.getName());
         return "index.html";
-        // return ResponseEntity.ok("Hello, World");
     }
+
+    @GetMapping("/movies")
+    public String getAllMoviesForCurrentUser(Model model, Principal principal) {
+        // principal.getName = currently logged in user's name
+
+        List<MovieConnection> movieConnections = movieService
+                .getMovieConnectionsByUsernameInRatingOrder(principal.getName());
+
+        model.addAttribute("movieConnections", movieConnections);
+        model.addAttribute("username", principal.getName());
+
+        return "movieList.html";
+    }
+
+    // ------------------------ Search for movies page
+
+    // return search page
+    @GetMapping("/search")
+    public String findAllMovies() {
+        return "searchTmdb.html";
+    }
+
+    // ------------------------ Add a new movie -----------------------
+
+    // return form for user to add a new movie based on their chosen TMDB movie
+    @PostMapping("/movies/add")
+    public String addTmdbMovieToMovieList(@RequestParam Integer tmdbMovieId, @RequestParam double rating,
+            RedirectAttributes redirectAttributes) {
+
+        try {
+            // call tmdb to get all details of movie
+            Movie tmdbMovie = tmdbService.getMovieFromTmdb(tmdbMovieId);
+
+            Movie usersListMovie = movieService.addMovieToUsersList(userService.getCurrentUser(), tmdbMovie,
+                    rating);
+            redirectAttributes.addFlashAttribute("success",
+                    "Movie - " + usersListMovie.getTitle() + " - added successfully!");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Unexpected error occurred, please contact the admin.");
+        }
+
+        return "redirect:/movies"; // Redirect back to the movies page
+    }
+
+    // ------------------------ Edit/update an existing movie ------------------
+
+    // ---- Edit movie and return movielist screen
+    @PostMapping("/movieConnections/{movieConnectionId}/rating")
+    public String updateMovieConnectionRating(
+            @PathVariable Integer movieConnectionId,
+            @RequestParam double rating,
+            RedirectAttributes redirectAttributes) {
+
+        try {
+            // call tmdb to get all details of movie
+            MovieConnection movieConnection = movieConnectionService.findMovieConnectionById(movieConnectionId)
+                    .orElseThrow(() -> new RuntimeException("MovieConnection not found"));
+
+            movieConnection.setRating(rating);
+            movieConnectionService.saveMovieConnection(movieConnection);
+
+            redirectAttributes.addFlashAttribute("Rating updated successfully!");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Unexpected error occurred, please contact the admin.");
+        }
+
+        return "redirect:/movies"; // Redirect back to the movies page
+    }
+
+    // ---------- Delete an existing movie
+    @PostMapping("/movies/{id}/remove")
+    public String removeMovieFromUsersList(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+        // find connection between current user and this movie and delete
+
+        try {
+            Movie movieToDeleteFromUsersList = movieService.getMovieById(id);
+
+            MovieConnection movieConnection = movieConnectionService
+                    .findMovieConnectionBetweenMovieAndConnection(userService.getCurrentUser(),
+                            movieService.getMovieById(movieToDeleteFromUsersList.getMovie_id()))
+                    .orElseThrow(() -> new RuntimeException("MovieConnection not found"));
+
+            movieConnectionService.deleteMovieConnectionById(movieConnection.getMovie_connection_id());
+
+            redirectAttributes.addFlashAttribute("success",
+                    "Movie - " + movieToDeleteFromUsersList.getTitle() + " - removed from you list successfully!");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error",
+                    "Unexpected error occurred delete moving, please contact the admin.");
+        }
+
+        return "redirect:/movies"; // Redirect back to the movies page
+    }
+
+    // ------------------------------- TEST ---------------------------------------
 
     @GetMapping("/movies/{movieId}") // return specific movie to view
     public ResponseEntity<?> getMovie(@PathVariable Integer movieId) {
@@ -66,113 +155,4 @@ public class MovieController {
         }
     }
 
-    // -------------- Get all movies in user's list ----------------------
-
-    @GetMapping("/movies") // return all movies in user's list
-    public String findAllMovies(Model model) {
-        // return movieService.getAllMovies();
-        Iterable<Movie> movielist = movieService.getAllMovies();
-        model.addAttribute("movieList", movielist);
-        model.addAttribute("username", "Parzival");
-
-        return "movieList.html";
-    }
-
-    @GetMapping("/search") // return all movies in user's list
-    public String findAllMovies() {
-        return "searchTmdb.html";
-    }
-
-    // ------------------------ Add a new movie -----------------------
-
-    @GetMapping("/movies/add") // return form in for user to add a new movie
-    public String showAddMovieForm(Model model) {
-        model.addAttribute("movie", new Movie()); // intitialize empty movie object so that Thymeleaf has Movie
-        return "addMovieForm.html";
-    }
-
-    @GetMapping("/movies/{tmdbMovieId}/add") // return form for user to add a new movie based on their chosen TMDB movie
-    public String showAddMovieForm(@PathVariable Integer tmdbMovieId, Model model) throws Exception {
-        // call tmdb to get all details of movie
-        Movie movie = tmdbService.getMovieFromTmdb(tmdbMovieId);
-
-        model.addAttribute("movie", movie);
-        return "addMovieForm.html";
-
-    }
-
-    @PostMapping("/movies") // create/add a new movie
-    public String addOneMovie(@ModelAttribute Movie movie, BindingResult bindingResult,
-            RedirectAttributes redirectAttributes) {
-        if (bindingResult.hasErrors()) {
-            // Handle validation errors and return an appropriate response
-            redirectAttributes.addFlashAttribute("error",
-                    "Validation error: " + bindingResult.getAllErrors().get(0).getDefaultMessage());
-        } else {
-            try {
-                movieService.addMovieToList(movie);
-                redirectAttributes.addFlashAttribute("success", "Movie added successfully!");
-            } catch (MovieWithThisTitleAlreadyExistsException e) {
-                redirectAttributes.addFlashAttribute("error", e.getMessage());
-            } catch (Exception e) {
-                redirectAttributes.addFlashAttribute("error", "Unexpected error occurred, please contact the admin.");
-            }
-        }
-        return "redirect:/movies"; // Redirect back to the movies page
-
-        /*
-         * Flash attributes in Spring MVC are a way to store temporary attributes that
-         * survive across a single redirect. They are typically used to pass data from
-         * one request to another when you perform a redirect.
-         * 
-         * In the redirected controller or view, you can retrieve the flash attributes.
-         * They are available as regular model attributes.
-         * Example (in Thymeleaf): ${success} or ${error}.
-         */
-    }
-
-    // ------------------------ Edit/update an existing movie ------------------
-
-    // Edit/update a movie
-    @PostMapping("/movies/{id}")
-    public String updateMovie(
-            @PathVariable Integer id,
-            @ModelAttribute Movie updatedMovie, // Update this based on your entity fields
-            BindingResult bindingResult,
-            RedirectAttributes redirectAttributes) {
-
-        if (bindingResult.hasErrors()) {
-            // Handle validation errors and return an appropriate response
-            // for example, if a score of > 10 is entered.
-            redirectAttributes.addFlashAttribute("error",
-                    "Validation error: " + bindingResult.getAllErrors().get(0).getDefaultMessage());
-        } else {
-            try {
-                movieService.updateMovie(updatedMovie);
-                redirectAttributes.addFlashAttribute("success", "Movie updated successfully!");
-            } catch (Exception e) {
-                redirectAttributes.addFlashAttribute("error", e.getMessage());
-            }
-        }
-        // Redirect back to the same page
-        return "redirect:/movies/" + id + "/edit";
-    }
-
-    @GetMapping("/movies/{movieId}/edit") // return form for user to edit/update an existing movie
-    public String showEditMovieForm(Model model, @PathVariable Integer movieId) {
-        // pass existing movie object to the form, so info is pre-populated
-        model.addAttribute("movie", movieService.getMovieById(movieId));
-        return "editMovieForm.html";
-    }
-
-    // ------------------------ Delete an existing movie ------------------
-
-    @DeleteMapping("/movies/{id}")
-    public ResponseEntity<?> deleteMovie(@PathVariable Integer id) {
-        if (movieService.deleteMovieById(id)) {
-            return ResponseEntity.ok("Movie deleted successfully");
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie not found");
-        }
-    }
 }

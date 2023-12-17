@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
-    boolean existsByTitle(String title);
+    Movie findByTitle(String title);
 
-    Iterable<Movie> findAllByOrderByRatingDesc();
+    // Iterable<Movie> findAllByOrderByRatingDesc();
     /*
      * This gives all the functionality of:
      * <S extends T> S save(S entity);

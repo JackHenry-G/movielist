@@ -5,10 +5,12 @@ import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import lombok.ToString;
+
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -16,34 +18,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 // an instance of the entity correlates to a row in the table
 
 @Entity
-@Table(name = "Movies")
+@Table(name = "movies")
 @ToString // use Lombok to generate a ToString method without having to write it ourselves
 public class Movie {
 
     @Id // used to mark it as the primary key of the table
-    @GeneratedValue(strategy = GenerationType.AUTO) // will generate a key unless one is provided. One would be provided
-                                                    // in the event the user retrieves a movie from the TMDB API
-                                                    // if they add one manually, an ID will be generated
-
-    // --------------------------- RETURNED BY TMDB
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "movie_id")
+    private Integer movie_id; // only integer as takes less storage and am not anticipating loads of accounts
 
     @Column(unique = true)
     private String title;
 
-    @JsonProperty("release_date")
+    @JsonProperty("release_date") // api passes back as release date
     private String releaseYear;
 
     private Integer runtime; // e.g. 157, (Minutes)
     private String tagline; // e.g. "Everyone hungers for something."
 
-    // --------------------------- NOT RETURNED BY TMDB
+    private String genre; // returned by TMDB
 
-    private String genre;
-
-    @Min(value = 0, message = "Score must be at least 0")
-    @Max(value = 10, message = "Score must be at most 10")
-    private double rating;
+    // cascadetype means if i delete a movieconnection record, all connections to a
+    // user will be deleted too. OrphanRemoval means if a movie has no connections,
+    // it will be removed too.
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<MovieConnection> userRatings;
 
     // In order to be compatible with certain frameworks or tools that use
     // reflection to create instances of classes, it's a convention to provide a
@@ -53,23 +52,21 @@ public class Movie {
 
     }
 
-    public Movie(Integer id, String title, String releaseYear, Integer runtime, String tagline, String genre,
-            @Min(value = 0, message = "Score must be at least 0") @Max(value = 10, message = "Score must be at most 10") double rating) {
-        this.id = id;
+    public Movie(Integer movie_id, String title, String releaseYear, Integer runtime, String tagline, String genre) {
+        this.movie_id = movie_id;
         this.title = title;
         this.releaseYear = releaseYear;
         this.runtime = runtime;
         this.tagline = tagline;
         this.genre = genre;
-        this.rating = rating;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getMovie_id() {
+        return movie_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setMovie_id(Integer movie_id) {
+        this.movie_id = movie_id;
     }
 
     public String getTitle() {
@@ -86,7 +83,7 @@ public class Movie {
 
     public void setReleaseYear(String releaseYear) {
 
-        this.releaseYear = releaseYear.substring(0, 4);
+        this.releaseYear = releaseYear.substring(0, 4); // convert full date into just the year
     }
 
     public String getGenre() {
@@ -95,14 +92,6 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
     }
 
     public Integer getRuntime() {

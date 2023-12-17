@@ -5,7 +5,6 @@
     <title>Movie List App!</title>
     <link th:href="@{/css/main.css}" rel="stylesheet" />
     <script th:src="@{/js/movielistscript.js}" defer></script>
-    <link rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -23,40 +22,39 @@
         <h3
           th:text="${username} ? ${username} + '\'s movies' : 'No user!'"
         ></h3>
-
-        <a href="/movies/add" id="add-button"><h2>Add</h2></a>
       </div>
 
       <table class="movietable">
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Score</th>
+            <th>Rating</th>
             <th>Title</th>
             <th>Genre</th>
-            <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           <!-- Use Thymeleaf to loop through list of movies object, and input each individual movie into a table row -->
-          <tr th:each="movie, stat : ${movieList}">
+          <tr th:each="movieConnection : ${movieConnections}">
             <!-- stat also holds info like index (starting from 0), count (starting from 1), size (size of list), current (item being procesed)-->
-            <td th:text="${stat.count}">Rank</td>
-            <td th:text="${movie.rating}">Score</td>
-            <td th:text="${movie.title}">Movie</td>
-            <td th:text="${movie.genre}">Genre</td>
             <td>
-              <a
-                th:href="@{/movies/{id}/edit(id=${movie.id})}"
-                class="btn"
-                id="edit-button"
-                >Edit</a
-              >
+              <input
+                type="number"
+                th:value="${movieConnection.rating}"
+                min="0"
+                max="10"
+                step="0.1"
+                th:data-movieconnection-id="${movieConnection.movie_connection_id}"
+                class="editable-rating"
+                required
+              />
             </td>
+            <!-- <td th:text="${movie.rating}">Score</td> -->
+            <td th:text="${movieConnection.movie.title}">Movie</td>
+            <td th:text="${movieConnection.movie.genre}">Genre</td>
             <td>
               <button
-                th:onclick="deleteRow([[${movie.id}]])"
+                th:onclick="deleteRow([[${movieConnection.movie.movie_id}]])"
                 class="btn btn-delete"
               >
                 Delete
@@ -84,4 +82,40 @@
       </div>
     </footer>
   </body>
+
+  <script>
+    // vent occurs when an element loses focus. For example, if you have an input field and it's currently focused (i.e., you can type into it), when you click away from it or tab to another element
+    document.querySelectorAll(".editable-rating").forEach((cell) => {
+      cell.addEventListener("blur", function () {
+        var updatedRating = this.value;
+        var movieConnectionId = this.getAttribute("data-movieconnection-id");
+        console.log(cell);
+        console.log(updatedRating);
+        console.log(movieConnectionId);
+
+        var params = new URLSearchParams();
+        params.append("rating", updatedRating);
+
+        fetch("/movieConnections/" + movieConnectionId + "/rating", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            // Include CSRF token if required
+          },
+          body: params,
+        })
+          .then((response) => {
+            if (response.ok) {
+              window.location.href = "/movies"; // if delete was successful, then refresh page by returning user to /movies URL  which will call the database to get whole list of movies again
+            } else {
+              throw new Error("Error updating movie rating"); // if was failed, the throw error
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+            // Handle error case
+          });
+      });
+    });
+  </script>
 </html>
