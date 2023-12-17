@@ -7,7 +7,7 @@ services:
     container_name: psql-db
     restart: always # if container fails, start up again. Ensures data is always accessible
     environment: # application.properties will pick this up
-      - POSTGRES_USER=jack
+      - POSTGRES_USER=movielover
       - POSTGRES_PASSWORD=testpwd
       - POSTGRES_DB=movielist
     ports:

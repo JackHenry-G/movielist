@@ -42,22 +42,35 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
    cd movielist
    ```
 2. **Setup postgreSQL**
-   Create a PostgreSQL database and update the app properties to the new database credentials.
-3. **Setup TMDb API Key**
-   Obtain a TMDb API key from TMDb Developer and replace the key calling the API.
-4. **Build and run using docker**
-   To make things easier, the postgresql database is dockerized to save you from having to install postgres and configure a server.
-   The below commands will build an image of the movielist application and then using the docker-compose file to spin up a container
-   with the movielist application in one container connected to a postgresql database in another container.
-   Simply make sure you have docker installed and run the below commands to:
-   1. Spin up the postgres database in a docker container
-   2. Run the spring boot app
-      ![Docker setup][movielist_docker_setup.png]
-   ```bash
-   docker-compose up -d
-   ./mvnw spring-boot:run
-   ```
-5. **Access the app**
+   Before running the application, you need to setup a data source. You can do this using a PostgreSQL database, either locally or using the
+   dockerized one I provided as part of this project. Depending on your choice you will need to edit a few things.
+
+   - Local PostgreSQL:
+
+     - Setup a PostgreSQL server, ensuring to note down the username and password you used to enter it.
+     - Setup a database named 'movielist'.
+     - Open the 'application-local.properties' file in this project and change teh username and password appropiately.
+     - Ensure that within 'application.properties', the active profile is set to 'local'
+     - If the PostgreSQL server is running, the app should now connect without issues. Simply run the app:
+
+     ````bash
+        docker-compose up -d
+        ./mvnw spring-boot:run
+        ```
+
+     ````
+
+   - Docker (easier):
+     - Make sure you have docker installed on your machine
+     - - Ensure that within 'application.properties', the active profile is set to 'docker'
+     - Run the following commands:
+       `bash
+      docker-compose up -d
+      ./mvnw spring-boot:run
+      `
+       ![Docker setup][movielist_docker_setup.png]
+
+3. **Access the app**
    Open your browser and navigate to http://localhost:8080
 
 ## Logs
