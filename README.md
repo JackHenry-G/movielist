@@ -42,6 +42,7 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
    cd movielist
    ```
 2. **Setup postgreSQL**
+
    Before running the application, you need to setup a data source. You can do this using a PostgreSQL database, either locally or using the
    dockerized one I provided as part of this project. Depending on your choice you will need to edit a few things.
 
@@ -70,7 +71,7 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
       `
        ![Docker setup][movielist_docker_setup.png]
 
-3. **Access the app**
+4. **Access the app**
    Open your browser and navigate to http://localhost:8080
 
 ## Logs
