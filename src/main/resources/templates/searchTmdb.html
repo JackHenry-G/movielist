@@ -5,83 +5,55 @@
     <title>Movie List App!</title>
     <link th:href="@{/css/main.css}" rel="stylesheet" />
     <script th:src="@{/js/movielistscript.js}" defer></script>
-    <link rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/eb7c358919.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header class="header">
-      <nav class="navigation">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/movies">Movies</a></li>
-          <li><a href="/search">Search</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div th:replace="~{fragments/pageSetup.html :: frame}"></div>
 
     <div class="content">
-      <div class="table-header">
+      <div class="search-bar">
         <input
           type="text"
           id="searchInput"
+          class="search-term"
           placeholder="Search the TMDB database..."
           onkeyup="checkEnterKey(event)"
           style="width: 100%"
         />
-        <button onclick="performSearch()">Search</button>
+        <button onclick="performSearch()" class="search-button">
+          <i class="fa fa-search"></i>
+        </button>
       </div>
 
-      <table class="movietable">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Release date</th>
-            <th>Add button</th>
-          </tr>
-        </thead>
-        <tbody id="searchResults"></tbody>
-      </table>
-    </div>
+      <div id="searchResultsGrid"></div>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <form id="ratingForm" action="" method="post">
-          <label for="rating"
-            >What would you rate this movie out of 10? (e.g., "Rate as 7, 8.2,
-            etc.").</label
-          >
-          <input
-            type="number"
-            id="rating"
-            name="rating"
-            min="0"
-            max="10"
-            step="0.1"
-            value="5"
-            required
-          />
-          <input type="hidden" id="tmdbMovieId" name="tmdbMovieId" />
-          <button type="submit">Submit Rating</button>
-          <button type="button" onclick="closePopup()">Cancel</button>
-        </form>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <form id="ratingForm" action="" method="post">
+            <label for="rating"
+              >What would you rate this movie out of 10? (e.g., "Rate as 7, 8.2,
+              etc.").</label
+            >
+            <input
+              type="number"
+              id="rating"
+              name="rating"
+              min="0"
+              max="10"
+              step="0.1"
+              value="5"
+              required
+            />
+            <input type="hidden" id="tmdbMovieId" name="tmdbMovieId" />
+            <button type="submit">Submit Rating</button>
+            <button type="button" onclick="closePopup()">Cancel</button>
+          </form>
+        </div>
       </div>
     </div>
-
-    <footer class="footer">
-      <!-- Display Success Message -->
-      <div th:if="${success == null and error == null}" class="message">
-        <p>Messages will display here...</p>
-      </div>
-
-      <!-- Display Success Message -->
-      <div th:if="${success != null}" class="success-message">
-        <p th:text="${success}"></p>
-      </div>
-
-      <!-- Display Error Message -->
-      <div th:if="${error != null}" class="error-message">
-        <p th:text="${error}"></p>
-      </div>
-    </footer>
   </body>
 
   <script>
@@ -121,26 +93,37 @@
     function displaySearchResults(results) {
       console.log("DisplaySearchResults: ", results);
 
-      const searchResultsTableBody = document.getElementById("searchResults");
-      searchResultsTableBody.innerHTML = ""; // clear previous search results
+      const searchResultsGrid = document.getElementById("searchResultsGrid");
+      searchResultsGrid.innerHTML = ""; // clear previous search results
 
       // loop through each movie in the results object and create a row in the table
       results.forEach((movie) => {
         // parse release date to just year
         const releaseYear = movie.release_date.split("-")[0]; // split '2018-01-20' into three, and take the first part
 
+        const posterPath =
+          "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+        console.log(posterPath);
         // create and row for table
-        const rowHTML = `
-                <tr>
-                    <td>${movie.title}</td>
-                    <td>${releaseYear}</td>
-                    <td>
-                      <a href="javascript:void(0)" onclick="showRatingPopup(${movie.id})" class="btn">Add</a>
-                    </td>
-                </tr>
+        const movieBox = `
+          <div class="movie-box">
+            <div class="movie-box-poster" style="background-image: 
+            url('${posterPath}');"></div>
+  
+            <div class="movie-box-text">
+              <p>${movie.title}</p>
+              <p>${releaseYear}</p>
+  
+              <div class="movie-box-add">
+                <a href="javascript:void(0)" onclick="showRatingPopup(${movie.id})" class="add-movie-button">I just watched this!</a>
+              </div>
+            </div>
+  
+            
+          </div>
             `;
 
-        searchResultsTableBody.innerHTML += rowHTML;
+        searchResultsGrid.innerHTML += movieBox;
       });
     }
 

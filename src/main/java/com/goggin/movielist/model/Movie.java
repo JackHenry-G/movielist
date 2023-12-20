@@ -38,6 +38,13 @@ public class Movie {
 
     private String genre; // returned by TMDB
 
+    private String backdrop_path; // image backdrop URL
+    private String poster_path; // image post URL
+
+    @Column(columnDefinition = "TEXT") // this string is a long piece of text. In SQL 'Text' is used to store bigger
+                                       // bits of text data (over 255 characters)
+    private String overview; // rundown of movie
+
     // cascadetype means if i delete a movieconnection record, all connections to a
     // user will be deleted too. OrphanRemoval means if a movie has no connections,
     // it will be removed too.
@@ -52,13 +59,17 @@ public class Movie {
 
     }
 
-    public Movie(Integer movie_id, String title, String releaseYear, Integer runtime, String tagline, String genre) {
+    public Movie(Integer movie_id, String title, String releaseYear, Integer runtime, String tagline, String genre,
+            String backdrop_path, String poster_path, String overview) {
         this.movie_id = movie_id;
         this.title = title;
-        this.releaseYear = releaseYear;
+        this.releaseYear = releaseYear.substring(0, 4);
         this.runtime = runtime;
         this.tagline = tagline;
         this.genre = genre;
+        this.backdrop_path = "https://image.tmdb.org/t/p/w500" + backdrop_path;
+        this.poster_path = "https://image.tmdb.org/t/p/w500" + poster_path;
+        this.overview = overview;
     }
 
     public Integer getMovie_id() {
@@ -82,7 +93,6 @@ public class Movie {
     }
 
     public void setReleaseYear(String releaseYear) {
-
         this.releaseYear = releaseYear.substring(0, 4); // convert full date into just the year
     }
 
@@ -108,6 +118,33 @@ public class Movie {
 
     public void setTagline(String tagline) {
         this.tagline = tagline;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public void setBackdrop_path(String backdrop_path) {
+        // e.g. https://image.tmdb.org/t/p/w500//vQGo5VjJcHxpzIa8lMBFzpAth1w.jpg
+        String tmdbUrl = "https://image.tmdb.org/t/p/w500" + backdrop_path;
+        this.backdrop_path = tmdbUrl;
+    }
+
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public void setPoster_path(String poster_path) {
+        String tmdbUrl = "https://image.tmdb.org/t/p/w500" + poster_path;
+        this.poster_path = tmdbUrl;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
 }

@@ -77,7 +77,7 @@ public class MovieController {
             Movie usersListMovie = movieService.addMovieToUsersList(userService.getCurrentUser(), tmdbMovie,
                     rating);
             redirectAttributes.addFlashAttribute("success",
-                    "Movie - " + usersListMovie.getTitle() + " - added successfully!");
+                    usersListMovie.getTitle() + " has been added to your list!");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Unexpected error occurred, please contact the admin.");
         }
@@ -126,7 +126,7 @@ public class MovieController {
             movieConnectionService.deleteMovieConnectionById(movieConnection.getMovie_connection_id());
 
             redirectAttributes.addFlashAttribute("success",
-                    "Movie - " + movieToDeleteFromUsersList.getTitle() + " - removed from you list successfully!");
+                    movieToDeleteFromUsersList.getTitle() + " - has been removed from your list!");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error",
                     "Unexpected error occurred delete moving, please contact the admin.");

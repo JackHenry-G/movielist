@@ -6,30 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up</title>
   </head>
-  <body>
-    <form th:action="@{/signup}" method="post">
-      <label for="username">Username:</label>
-      <input
-        type="text"
-        name="username"
-        placeholder="Enter username..."
-        required
-      />
+  <body style="height: auto;">
 
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter password..."
-        required
-      />
+    <div class="user-form">
+        <div th:if="${param.error}">
+            <p style="color: red">Invalid user or password!</p>
+        </div>
 
-      <button type="submit">Register</button>
+        <div th:if="${loginSuccess}">
+            <p style="color: green" th:text="${loginSuccess}"></p>
+        </div>
 
-      <!-- Display error message if 'error' parameter is present in the URL -->
-      <div th:if="${error}">
-        <p style="color: red" th:text="${error}"></p>
-      </div>
-    </form>
+        <form th:action="@{/signup}" method="post">
+            <label for="username">Username:</label>
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter username..."
+                required
+            />
+        
+            <label for="password">Password:</label>
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter password..."
+                required
+            />
+        
+            <button type="submit">Register</button>
+        
+            <!-- Display error message if 'error' parameter is present in the URL -->
+            <div th:if="${error}">
+                <p style="color: red" th:text="${error}"></p>
+            </div>
+            </form>
+    <div>
+    
   </body>
 </html>
