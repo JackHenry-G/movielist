@@ -1002,3 +1002,90 @@ java.net.SocketException: Connection reset
 2023-12-28T12:00:13.943Z  INFO 8456 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-12-28T12:00:13.943Z  INFO 8456 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 2023-12-28T12:00:16.789Z  INFO 8456 --- [http-nio-8080-exec-6] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$RrgZ7w8JD6.5UFJ1Lns3Nu.pGZTBD8DraHXQUDmHg1F2nm9.XT9t., latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
+2023-12-28T12:01:55.922Z  INFO 1768 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 1768 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-28T12:01:55.930Z  INFO 1768 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "docker"
+2023-12-28T12:01:57.214Z  INFO 1768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-28T12:01:57.354Z  INFO 1768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 3 JPA repository interfaces.
+2023-12-28T12:01:58.296Z  INFO 1768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-28T12:01:58.313Z  INFO 1768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-28T12:01:58.314Z  INFO 1768 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-12-28T12:01:58.546Z  INFO 1768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-28T12:01:58.548Z  INFO 1768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2533 ms
+2023-12-28T12:01:58.823Z  INFO 1768 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-28T12:01:58.965Z  INFO 1768 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-12-28T12:01:58.971Z  INFO 1768 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-28T12:01:59.480Z  INFO 1768 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-28T12:01:59.528Z  INFO 1768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-28T12:01:59.818Z  INFO 1768 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1669931a
+2023-12-28T12:01:59.822Z  INFO 1768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-28T12:01:59.902Z  WARN 1768 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-28T12:02:01.576Z  INFO 1768 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-28T12:02:01.766Z  INFO 1768 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-28T12:02:02.571Z  WARN 1768 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-28T12:02:02.761Z  INFO 1768 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-28T12:02:02.986Z  INFO 1768 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67b2c8bb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32029cd, org.springframework.security.web.context.SecurityContextHolderFilter@23b3afb4, org.springframework.security.web.header.HeaderWriterFilter@15d68a50, org.springframework.security.web.authentication.logout.LogoutFilter@df5f657, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1f3f0d25, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cf1b5fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@790ea58f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48f95f96, org.springframework.security.web.access.ExceptionTranslationFilter@1e4bf55b, org.springframework.security.web.access.intercept.AuthorizationFilter@60e5db1d]
+2023-12-28T12:02:03.541Z  INFO 1768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-28T12:02:03.560Z  INFO 1768 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 8.261 seconds (process running for 9.206)
+2023-12-28T12:02:03.565Z  INFO 1768 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-12-28T12:02:05.766Z  INFO 1768 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-28T12:02:05.766Z  INFO 1768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-28T12:02:05.768Z  INFO 1768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-28T12:02:07.828Z  INFO 1768 --- [http-nio-8080-exec-5] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$VNaWYD7i8Ve1FYQcRkcY4OLUmFGsTidGAId6SGNVUks4jWFhsIjGK, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
+2023-12-28T12:03:11.285Z  INFO 2256 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 2256 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-28T12:03:11.291Z  INFO 2256 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "docker"
+2023-12-28T12:03:12.760Z  INFO 2256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-28T12:03:12.900Z  INFO 2256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 3 JPA repository interfaces.
+2023-12-28T12:03:14.007Z  INFO 2256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-28T12:03:14.034Z  INFO 2256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-28T12:03:14.036Z  INFO 2256 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-12-28T12:03:14.272Z  INFO 2256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-28T12:03:14.273Z  INFO 2256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2863 ms
+2023-12-28T12:03:14.604Z  INFO 2256 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-28T12:03:14.775Z  INFO 2256 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-12-28T12:03:14.784Z  INFO 2256 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-28T12:03:15.304Z  INFO 2256 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-28T12:03:15.366Z  INFO 2256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-28T12:03:15.701Z  INFO 2256 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3957d88b
+2023-12-28T12:03:15.704Z  INFO 2256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-28T12:03:15.777Z  WARN 2256 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-28T12:03:17.278Z  INFO 2256 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-28T12:03:17.456Z  INFO 2256 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-28T12:03:18.240Z  WARN 2256 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-28T12:03:18.470Z  INFO 2256 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-28T12:03:18.751Z  INFO 2256 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@401d83ce, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b7b099b, org.springframework.security.web.context.SecurityContextHolderFilter@69e308e2, org.springframework.security.web.header.HeaderWriterFilter@67062a93, org.springframework.security.web.authentication.logout.LogoutFilter@73072745, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a7b4bb6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c80f8dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b72860c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5abc488d, org.springframework.security.web.access.ExceptionTranslationFilter@524418a2, org.springframework.security.web.access.intercept.AuthorizationFilter@6250d33c]
+2023-12-28T12:03:19.138Z  INFO 2256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-28T12:03:19.152Z  INFO 2256 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 8.531 seconds (process running for 9.22)
+2023-12-28T12:03:19.156Z  INFO 2256 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-12-28T12:03:21.444Z  INFO 2256 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-28T12:03:21.444Z  INFO 2256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-28T12:03:21.455Z  INFO 2256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-12-28T12:03:23.687Z  INFO 2256 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$GhNDry.ET6Ql/CGA4GKSzO2Tr3fpawHk2EnP6OWBO0qbdL9Vwk.YC, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
+2023-12-28T12:06:16.151Z  INFO 14192 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 17.0.7 with PID 14192 (C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist\target\classes started by jackh in C:\Users\jackh\OneDrive\Documents\Coding\JavaProjects\movielist)
+2023-12-28T12:06:16.156Z  INFO 14192 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "docker"
+2023-12-28T12:06:17.570Z  INFO 14192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-28T12:06:17.716Z  INFO 14192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 3 JPA repository interfaces.
+2023-12-28T12:06:18.793Z  INFO 14192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-28T12:06:18.811Z  INFO 14192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-28T12:06:18.825Z  INFO 14192 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-12-28T12:06:19.058Z  INFO 14192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-28T12:06:19.058Z  INFO 14192 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2788 ms
+2023-12-28T12:06:19.342Z  INFO 14192 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-28T12:06:19.503Z  INFO 14192 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-12-28T12:06:19.508Z  INFO 14192 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-28T12:06:20.146Z  INFO 14192 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-28T12:06:20.203Z  INFO 14192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-28T12:06:20.492Z  INFO 14192 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b6def36
+2023-12-28T12:06:20.497Z  INFO 14192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-28T12:06:20.564Z  WARN 14192 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-12-28T12:06:22.316Z  INFO 14192 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-28T12:06:22.492Z  INFO 14192 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-28T12:06:23.229Z  WARN 14192 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-28T12:06:23.408Z  INFO 14192 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-28T12:06:23.645Z  INFO 14192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30cb489a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@401d83ce, org.springframework.security.web.context.SecurityContextHolderFilter@7747571c, org.springframework.security.web.header.HeaderWriterFilter@322593ed, org.springframework.security.web.authentication.logout.LogoutFilter@4197e859, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6250d33c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f67f5ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@202fd4c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b7b099b, org.springframework.security.web.access.ExceptionTranslationFilter@7552f05b, org.springframework.security.web.access.intercept.AuthorizationFilter@498f1f63]
+2023-12-28T12:06:24.029Z  INFO 14192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-28T12:06:24.044Z  INFO 14192 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 8.569 seconds (process running for 9.236)
+2023-12-28T12:06:24.048Z  INFO 14192 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2023-12-28T12:06:24.168Z  INFO 14192 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-28T12:06:24.169Z  INFO 14192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-28T12:06:24.170Z  INFO 14192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-28T12:06:26.501Z  INFO 14192 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$zJ.lvfmzowMohyz8JHp.T.WzBjl2WL.vOC14pX.fG9haZP7r4JLTe, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)

@@ -14,12 +14,12 @@
         <div th:if="${success == null and error == null}" class="message">
           <p>Messages will display here...</p>
         </div>
-  
+
         <!-- Display Success Message -->
         <div th:if="${success != null}" class="success-message">
           <p th:text="${success}"></p>
         </div>
-  
+
         <!-- Display Error Message -->
         <div th:if="${error != null}" class="error-message">
           <p th:text="${error}"></p>
@@ -28,19 +28,21 @@
 
       <nav class="sidenav">
         <div class="sidenav-title">
-          <img src="/images/moviilist.png" alt="Movielist Logo">
+          <img src="/images/moviilist.png" alt="Movielist Logo" />
         </div>
-  
+
         <div class="sidenav-links">
           <ul>
             <li>
-              <a href="/"><i class="fa-solid fa-igloo"></i></i>Home</a>
+              <a href="/"><i class="fa-solid fa-igloo"></i>Home</a>
             </li>
             <li>
-              <a href="/movies"><i class="fa-solid fa-film"></i></i>Movies</a>
+              <a href="/movies"><i class="fa-solid fa-film"></i>Movies</a>
             </li>
             <li>
-              <a href="/search"><i class="fa-brands fa-searchengin"></i></i>Search</a>
+              <a href="/search"
+                ><i class="fa-brands fa-searchengin"></i>Search</a
+              >
             </li>
           </ul>
         </div>
