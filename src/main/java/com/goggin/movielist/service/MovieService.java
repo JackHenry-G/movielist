@@ -1,6 +1,8 @@
 package com.goggin.movielist.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.model.MovieConnection;
@@ -55,6 +57,16 @@ public class MovieService {
         List<MovieConnection> movieConnections = movieConnectionRepository
                 .findByUser_UsernameOrderByRatingDesc(username);
         return movieConnections;
+    }
+
+    public List<Movie> getMoviesWhereRatingIsGreaterThan(String username, double rating) {
+        List<MovieConnection> movieConnections = movieConnectionRepository
+                .findByUser_UsernameAndRatingGreaterThan(username, rating);
+
+        return movieConnections.stream()
+                .map(connection -> connection.getMovie())
+                .filter(movie -> movie != null) // Filter out null movies, if any
+                .collect(Collectors.toList());
     }
 
     public Movie getMovieById(Integer id) {

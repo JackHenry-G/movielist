@@ -21,8 +21,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Integer user_id; // only integer as takes less storage and am not anticipating loads of accounts
+    private String email;
     private String username;
     private String password;
+
+    private double latitude;
+    private double longitude;
 
     // cascadetype means if i delete a movieconnection record, all connections to a
     // user will be deleted too
@@ -37,10 +41,16 @@ public class User {
 
     }
 
-    public User(Integer user_id, String username, String password) {
+    public User(Integer user_id, String email, String username, String password, double latitude, double longitude) {
+        System.out.println("-------------------------");
+        System.out.println(latitude);
+        System.out.println(longitude);
         this.user_id = user_id;
+        this.email = email;
         this.username = username;
         this.password = password;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public Integer getUser_id() {
@@ -49,6 +59,14 @@ public class User {
 
     public void setUser_id(Integer user_id) {
         this.user_id = user_id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -65,6 +83,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
 }

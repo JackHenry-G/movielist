@@ -6,42 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up</title>
   </head>
-  <body style="height: auto;">
-
+  <body style="height: auto">
     <div class="user-form">
-        <div th:if="${param.error}">
-            <p style="color: red">Invalid user or password!</p>
-        </div>
+      <div th:if="${param.error}">
+        <p style="color: red">Invalid user or password!</p>
+      </div>
 
-        <div th:if="${loginSuccess}">
-            <p style="color: green" th:text="${loginSuccess}"></p>
-        </div>
+      <div th:if="${loginSuccess}">
+        <p style="color: green" th:text="${loginSuccess}"></p>
+      </div>
 
-        <form th:action="@{/signup}" method="post">
-            <label for="username">Username:</label>
-            <input
-                type="text"
-                name="username"
-                placeholder="Enter username..."
-                required
-            />
-        
-            <label for="password">Password:</label>
-            <input
-                type="password"
-                name="password"
-                placeholder="Enter password..."
-                required
-            />
-        
-            <button type="submit">Register</button>
-        
-            <!-- Display error message if 'error' parameter is present in the URL -->
-            <div th:if="${error}">
-                <p style="color: red" th:text="${error}"></p>
-            </div>
-            </form>
-    <div>
-    
+      <form
+        th:action="@{/signup}"
+        method="post"
+        onsubmit="getLocationAndSubmit(event)"
+      >
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter email..."
+          required
+        />
+
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter username..."
+          required
+        />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password..."
+          required
+        />
+
+        <!-- Hidden input fields for latitude and longitude -->
+        <input type="hidden" name="latitude" value="0.0" />
+        <input type="hidden" name="longitude" value="0.0" />
+
+        <button type="submit">Register</button>
+
+        <p>
+          Location information will be requested. Feel free to say no, we will
+          use London by default.
+        </p>
+
+        <!-- Display error message if 'error' parameter is present in the URL -->
+        <div th:if="${error}">
+          <p style="color: red" th:text="${error}"></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function getLocationAndSubmit(event) {
+        event.preventDefault(); // Prevent the form from submitting immediately
+
+        // Default latitude and longitude for London
+        const defaultLatitude = 51.5074;
+        const defaultLongitude = -0.1278;
+
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+
+              // Store the location in hidden form fields
+              document.querySelector('input[name="latitude"]').value = latitude;
+              document.querySelector('input[name="longitude"]').value =
+                longitude;
+
+              // Continue with the form submission
+              event.target.submit();
+            },
+            function (error) {
+              // Handle location error gracefully
+              console.error("Error getting location:", error);
+
+              // Use default values for London
+              document.querySelector('input[name="latitude"]').value =
+                defaultLatitude;
+              document.querySelector('input[name="longitude"]').value =
+                defaultLongitude;
+
+              // Continue with the form submission
+              event.target.submit();
+            }
+          );
+        } else {
+          // Geolocation is not available in this browser
+
+          // Use default values for London
+          document.querySelector('input[name="latitude"]').value =
+            defaultLatitude;
+          document.querySelector('input[name="longitude"]').value =
+            defaultLongitude;
+
+          // Continue with the form submission
+          event.target.submit();
+        }
+      }
+    </script>
   </body>
 </html>

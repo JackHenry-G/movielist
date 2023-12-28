@@ -8,12 +8,15 @@ import java.security.Principal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.model.MovieConnection;
 import com.goggin.movielist.service.MovieConnectionService;
 import com.goggin.movielist.service.MovieService;
-import com.goggin.movielist.service.TmdbService;
+import com.goggin.movielist.service.TmdbApiService;
 import com.goggin.movielist.service.UserService;
+import com.goggin.movielist.service.UserTaskService;
+import com.goggin.movielist.service.GooglePlacesApiService;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,10 +35,35 @@ public class MovieController {
     private MovieService movieService;
 
     @Autowired
-    private TmdbService tmdbService;
+    private TmdbApiService tmdbService;
+
+    @Autowired
+    private UserTaskService userTaskService;
 
     @Autowired
     private MovieConnectionService movieConnectionService;
+
+    @Autowired
+    private GooglePlacesApiService googlePlacesApiService;
+
+    // ------------------------ For testing purposes
+
+    @GetMapping("/testemail")
+    public ResponseEntity<String> testEmail() {
+
+        userTaskService.scanVueCinemaAndSendEmail(userService.getCurrentUser());
+
+        return ResponseEntity.ok("Scan cinema and Email should've worked!"); // Returns 200 OK with the string
+    }
+
+    @GetMapping("/testgoogleapi")
+    public ResponseEntity<String> testGoogleApi() {
+        googlePlacesApiService.getPlaceUrlFromGooglePlacesApiTextSearch("Vue cinema", 8, userService.getCurrentUser());
+
+        return ResponseEntity.ok("Google Api should've worked!"); // Returns 200 OK with the string in the body
+    }
+
+    // ----------------------------- base pages
 
     @GetMapping("/") // home page
     public String getMovie() {

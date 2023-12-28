@@ -15,6 +15,8 @@ import com.goggin.movielist.model.User;
 public interface MovieConnectionRepository extends JpaRepository<MovieConnection, Integer> {
     List<MovieConnection> findByUser_UsernameOrderByRatingDesc(String username);
 
+    List<MovieConnection> findByUser_UsernameAndRatingGreaterThan(String username, double rating);
+
     Optional<MovieConnection> findByUserAndMovie(User user, Movie movie);
 
 }
