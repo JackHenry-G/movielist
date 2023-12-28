@@ -7,11 +7,35 @@
     <script th:src="@{/js/movielistscript.js}" defer></script>
     <link rel="stylesheet" />
   </head>
-  <body>
+  <body style="overflow-y: hidden">
     <div th:replace="~{fragments/pageSetup.html :: frame}"></div>
 
     <div class="content">
-      <p>Hello there!</p>
+      <div class="homepage-text">
+        <h1>Welcome to CineMemories</h1>
+        <p>Your Personal Movie Journal and Cinema Alert</p>
+
+        <h2>Rediscover the Magic of Movies!</h2>
+        <p>
+          Welcome to CineMemories! - Where every film you love comes back to
+          you.
+        </p>
+
+        <h3>Rate and Remember</h3>
+        <p>
+          Just watched a movie? Search for it here and give it a rating! Our app
+          will do the rest! It will save your movie in your list and rank them
+          in order, from those casual watches to the unforgettable
+          blockbusters...
+        </p>
+
+        <h3>The Magic of 9 - Stay Alerted, Stay Excited</h3>
+        <p>
+          Got a movie that's a solid 9 or above in your book? We've got a
+          special treat for you... Never miss out on a cinematic reunion! If
+          your beloved movies are playing nearby, we'll let you know...
+        </p>
+      </div>
     </div>
   </body>
 </html>
