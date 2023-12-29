@@ -23,6 +23,7 @@
           name="username"
           placeholder="Enter username..."
           required
+          th:value="${testUname}"
         />
 
         <label for="password">Password:</label>
@@ -31,14 +32,16 @@
           name="password"
           placeholder="Enter password..."
           required
+          th:value="${testPwd}"
+
         />
 
         <button type="submit">Sign in</button>
       </form>
 
       <p>Don't have an account?<a href="/signup"> Register here</a></p>
-      <p>----------------------------------------</p>
-      <a href="/signuptest"> Register test user</a></p>
+      
+      <a th:if="${showTest}" href="/signuptest" style="color:green">Register TEST user</a></p>
     </div>
   </body>
 </html>

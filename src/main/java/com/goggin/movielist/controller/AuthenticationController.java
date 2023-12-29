@@ -1,7 +1,9 @@
 package com.goggin.movielist.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,8 +28,12 @@ public class AuthenticationController {
     @Autowired
     private MovieService movieService;
 
+    @Value("${show.test:false}") // :false is a default value. So if show.test isn't defined, it will be false
+    private boolean showTest;
+
     @GetMapping("/login")
-    public String getLoginPage() {
+    public String getLoginPage(Model model) {
+        model.addAttribute("showTest", showTest);
         return "login.html";
     }
 
@@ -76,6 +82,12 @@ public class AuthenticationController {
             log.info("Test user registered: " + user.toString());
 
             redirectAttributes.addFlashAttribute("registerSuccess", "User successfully registered!");
+
+            if (showTest) {
+                redirectAttributes.addFlashAttribute("testUname", "test");
+                redirectAttributes.addFlashAttribute("testPwd", "pwd");
+            }
+
             return "redirect:/login";
         } catch (Exception e) {
             log.error("Issue signing up test user: {}", e.getMessage());
