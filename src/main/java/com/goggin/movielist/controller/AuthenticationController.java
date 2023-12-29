@@ -16,6 +16,7 @@ import com.goggin.movielist.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -32,7 +33,11 @@ public class AuthenticationController {
     private boolean showTest;
 
     @GetMapping("/login")
-    public String getLoginPage(Model model) {
+    public String getLoginPage(@RequestParam(required = false) String logout, Model model) {
+        if (logout != null) {
+            model.addAttribute("message", "You have been successfully logged out!");
+        }
+
         model.addAttribute("showTest", showTest);
         return "login.html";
     }

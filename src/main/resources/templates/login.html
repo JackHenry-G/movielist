@@ -16,6 +16,10 @@
         <p style="color: green" th:text="${loginSuccess}"></p>
       </div>
 
+      <div th:if="${logoutMessage}">
+        <p style="color: green" th:text="${logoutMessage}"></p>
+      </div>
+
       <form th:action="@{/login}" method="post">
         <label for="username">Username:</label>
         <input
@@ -39,7 +43,7 @@
         <button type="submit">Sign in</button>
       </form>
 
-      <p>Don't have an account?<a href="/signup"> Register here</a></p>
+      <p>Don't have an account? <a href="/signup">Register here</a></p>
       
       <a th:if="${showTest}" href="/signuptest" style="color:green">Register TEST user</a></p>
     </div>
