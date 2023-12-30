@@ -1,6 +1,6 @@
 # movielist
 
-Movielist is a full-stack Java website application developed using Spring Boot. It allows users to search for movies from the TMDb database, rate them, and build a list of favorite movies. The app ranks the favorite movies based on the user's scores, providing a personalized list of top-rated films. Additionally, there are plans to implement a feature that notifies users when their favorite movies are showing in nearby cinemas.
+Movielist is a full-stack Java website application developed using Spring Boot. It allows users to search for movies from the TMDb database, rate them, and build a list of favorite movies. The app ranks the favorite movies based on the user's scores, providing a personalized list of top-rated films. Additionally, there is a selenium based cronjob script that scans local cinemas for the user's favourite movies - this will send out an email each night telling the user if one of their favourite movies are showing near them!
 
 ## Table of Contents
 
@@ -21,8 +21,7 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 
   - Spring Boot
   - Java
-  - PostgreSQL (Database)
-  - TMDb API
+  - Docker
 
 - **Frontend:**
 
@@ -32,7 +31,13 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
   - Thymeleaf
 
 - **Database:**
+
   - PostgreSQL
+
+- **3rd party APIs:**
+
+  - Google Places API - to search for cinemas near to the user
+  - tMDB - movie database to provide data for the app
 
 ## Getting Started
 
@@ -43,35 +48,19 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
    ```
 2. **Setup postgreSQL**
 
-   Before running the application, you need to setup a data source. You can do this using a PostgreSQL database, either locally or using the
-   dockerized one I provided as part of this project. Depending on your choice you will need to edit a few things.
+   Before running the application, you need to setup a data source. You can do this using a PostgreSQL database, which I have provided within the docker-compose file.
 
-   - Local PostgreSQL:
+   1. Ensure you have docker installed on your machine
+   2. Set the correct profile in the parent 'application.properties' file:
+      - Use 'test' if you want to have capabilities for quicker testing, like an automated register of a test user.
+      - Use 'staging' if you want the production app but with a test database, but without test feature capabilities.
+        Both of these include a docker postgresql intance set to 'create-drop' so the database will be cleared of data and setup a new when the app is restarted.
+   3. docker-compose up -d
+   4. ./mvnw spring-boot:run
 
-     - Setup a PostgreSQL server, ensuring to note down the username and password you used to enter it.
-     - Setup a database named 'movielist'.
-     - Open the 'application-local.properties' file in this project and change teh username and password appropiately.
-     - Ensure that within 'application.properties', the active profile is set to 'local'
-     - If the PostgreSQL server is running, the app should now connect without issues. Simply run the app:
+   ![Docker setup][movielist_docker_setup.png]
 
-     ````bash
-        docker-compose up -d
-        ./mvnw spring-boot:run
-        ```
-
-     ````
-
-   - Docker (easier):
-     - Make sure you have docker installed on your machine
-     - - Ensure that within 'application.properties', the active profile is set to 'docker'
-     - Run the following commands:
-       `bash
-      docker-compose up -d
-      ./mvnw spring-boot:run
-      `
-       ![Docker setup][movielist_docker_setup.png]
-
-4. **Access the app**
+3. **Access the app**
    Open your browser and navigate to http://localhost:8080
 
 ## Logs
@@ -84,3 +73,7 @@ I've set up the logs to only catch what's really needed, making them easy on the
 3. There is a rolling policy, which creates a new log file when the current one reaches 10MB
 4. The rolling policy also only retains two archived log files before deleting the oldest one
 5. There is a custom output to make them easier to read
+
+## Improvements
+
+Improved security for API keys - currently the api keys are set explicitly within the code for everyone to see. This is fine for now as this application is just for test purposes and each account is a free tier, so there is little risk to me. However, in standard production environment it would be wise to secure these behind environment variables or encryption. Similarly, I have an API call within the JavaScript that I would refactor to be from the Spring Boot backend.
