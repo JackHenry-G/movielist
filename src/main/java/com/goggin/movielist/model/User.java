@@ -42,9 +42,6 @@ public class User {
     }
 
     public User(Integer user_id, String email, String username, String password, double latitude, double longitude) {
-        System.out.println("-------------------------");
-        System.out.println(latitude);
-        System.out.println(longitude);
         this.user_id = user_id;
         this.email = email;
         this.username = username;

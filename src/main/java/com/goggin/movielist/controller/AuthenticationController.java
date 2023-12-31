@@ -35,7 +35,7 @@ public class AuthenticationController {
     @GetMapping("/login")
     public String getLoginPage(@RequestParam(required = false) String logout, Model model) {
         if (logout != null) {
-            model.addAttribute("message", "You have been successfully logged out!");
+            model.addAttribute("logoutMessage", "You have been successfully logged out!");
         }
 
         model.addAttribute("showTest", showTest);
