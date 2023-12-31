@@ -12,10 +12,11 @@ Deployed fully with render.com at https://movielist-render-deployment.onrender.c
 
 ## Features
 
-- **Search Movies:** Utilize the TMDb database to search for movies.
-- **Rate Movies:** Assign scores to movies and build a list of favorite films.
-- **Ranking System:** Automatically rank favorite movies based on user scores.
-- **Cinema Notifications:** Receive notifications when favorite movies are showing in nearby cinemas.
+- **User accounts:** Users can create and log into their movielist account.
+- **Search Movies:** Users can search for a movie they just watched through the tMDB API.
+- **Rate Movies:** Users can then add that movie to their favourite films list by giving it a score out of 10.
+- **Ranking System:** Users can see all the movies in their list, ranked in order of highest rating to lowest.
+- **Cinema Notifications:** Everyday at midnight a cronjob script will run, which will tell the user if one of their favourite films (>9 rating) is showing in a cinema near them. Meaning if I've always wanted to see Jurassic Park in cinema, this app will notfiy when it's showing near me! This script uses the Google Places API to find the closest cinemas to the user (where they provided location information on signup) and then uses selenium to webscrape them for showtimes. 
 
 ## Technologies
 
@@ -41,7 +42,7 @@ Deployed fully with render.com at https://movielist-render-deployment.onrender.c
   - Google Places API - to search for cinemas near to the user
   - tMDB - movie database to provide data for the app
 
-## Getting Started
+## Getting started on your local machine
 
 1. **Clone the Repository:**
    ```bash
