@@ -2,6 +2,8 @@
 
 Movielist is a full-stack Java website application developed using Spring Boot. It allows users to search for movies from the TMDb database, rate them, and build a list of favorite movies. The app ranks the favorite movies based on the user's scores, providing a personalized list of top-rated films. Additionally, there is a selenium based cronjob script that scans local cinemas for the user's favourite movies - this will send out an email each night telling the user if one of their favourite movies are showing near them!
 
+Deployed fully with render.com at https://movielist-render-deployment.onrender.com
+
 ## Table of Contents
 
 - [Features](#features)
@@ -13,7 +15,7 @@ Movielist is a full-stack Java website application developed using Spring Boot. 
 - **Search Movies:** Utilize the TMDb database to search for movies.
 - **Rate Movies:** Assign scores to movies and build a list of favorite films.
 - **Ranking System:** Automatically rank favorite movies based on user scores.
-- **Cinema Notifications (Planned):** Receive notifications when favorite movies are showing in nearby cinemas.
+- **Cinema Notifications:** Receive notifications when favorite movies are showing in nearby cinemas.
 
 ## Technologies
 
