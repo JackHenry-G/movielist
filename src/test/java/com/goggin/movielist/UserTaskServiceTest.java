@@ -59,6 +59,7 @@ public class UserTaskServiceTest {
                 movieService.addMovieToUsersList(user, wish, 9.3); // at cinema
                 movieService.addMovieToUsersList(user, iceAge, 9.8); // at cinema
 
+                // see
                 userTaskService.scanVueCinemaAndSendEmail(user);
         }
 }

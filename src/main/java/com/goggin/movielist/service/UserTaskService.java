@@ -77,25 +77,31 @@ public class UserTaskService {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // Set it once here
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Explicit wait
-        log.info("Selenium web driver succesfully initialized, beginning seraches");
+        log.info("Selenium web driver succesfully initialized, beginning searches on the below cinemas:");
+        localVueCinemas.forEach(cinema -> log.info(cinema.getDisplayName().getText()));
 
         try {
             // search each lobal cinema website for the favourite movies
             for (Place cinema : localVueCinemas) {
+
                 // get website information
                 String cinemaWebsite = cinema.getWebsiteUri();
                 String cinemaName = cinema.getDisplayName().getText();
+                log.info("Starting process with - " + cinemaName);
 
                 // go to website
                 driver.get(cinemaWebsite);
+                log.info("Website driver retrieved");
 
                 // reject all cookies
                 WebElement rejectAllCookiesButton = driver.findElement(By.id("onetrust-reject-all-handler"));
                 rejectAllCookiesButton.click();
+                log.info("Reject cookies button found and clicked.");
 
                 // click button to go on the full 'all times' section
-                WebElement button = driver.findElement(By.cssSelector("button[data-test='filters-day-All times']"));
-                button.click();
+                WebElement allTimesButton = driver
+                        .findElement(By.cssSelector("button[data-test='filters-day-All Times']"));
+                allTimesButton.click();
 
                 // find matching movies on website
                 wait.until(ExpectedConditions
@@ -150,7 +156,7 @@ public class UserTaskService {
         log.info("Beginning email process!");
         // send email if found matching movies
         if (messageBuilder.length() == 0) {
-            log.info("No movies found at the cinemas!");
+            log.info("No movies found at the cinemas! Email therefore NOT sent.");
         } else {
             emailService.sendEmail(recipientEmail, "Upcoming movies!", "Hi " + recipientUsername
                     + ", \n\nThis is your automated CinemaScanner service here to tell you which of your favourite movies, according to your FavFilms list, are showing in a cinema near you! Check them out below :) \n\n"
