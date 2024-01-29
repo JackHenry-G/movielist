@@ -66,7 +66,7 @@ public class MovieController {
     // ----------------------------- base pages
 
     @GetMapping("/") // home page
-    public String getMovie() {
+    public String getHomePage() {
         return "index.html";
     }
 
