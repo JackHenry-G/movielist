@@ -44,7 +44,8 @@ public class UserTaskService {
     @Autowired
     private GooglePlacesApiService googlePlacesApiService;
 
-    @Scheduled(cron = "0 0 0 * * ?") // Run daily at midnight
+    // - turned off to prevent GoogleAPI billing @Scheduled(cron = "0 0 0 * * ?") //
+    // Run daily at midnight
     public void executeUserSpecificTasks() {
         List<User> users = userRepository.findAll(); // Fetch all users
 
