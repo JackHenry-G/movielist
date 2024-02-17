@@ -29,7 +29,7 @@ public class Movie {
 
     @JsonProperty("id")
     @Column(name = "tmdb_id")
-    private int tmdb_id;
+    private Integer tmdb_id;
 
     @Column(unique = true)
     private String title;
@@ -84,11 +84,11 @@ public class Movie {
         this.movie_id = movie_id;
     }
 
-    public int getTmdb_id() {
+    public Integer getTmdb_id() {
         return tmdb_id;
     }
 
-    public void setTmdb_id(int tmdb_id) {
+    public void setTmdb_id(Integer tmdb_id) {
         this.tmdb_id = tmdb_id;
     }
 
