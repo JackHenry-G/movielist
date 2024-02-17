@@ -8,6 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -17,6 +18,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.goggin.movielist.exception.MovieNotFoundInTmdbException;
 import com.goggin.movielist.model.Movie;
+import com.goggin.movielist.model.TmdbResponse;
+import com.goggin.movielist.model.TmdbResponseResult;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -46,12 +49,15 @@ public class TmdbApiService {
      */
     public Movie getMovieDetailsFromTmdbById(Integer tmdbMovieId) throws MovieNotFoundInTmdbException {
         // configure details
-        String url = constructUrl("movie", tmdbMovieId);
+        String url = UriComponentsBuilder.fromHttpUrl(baseUrl + "/movie")
+                .pathSegment(tmdbMovieId.toString())
+                .build()
+                .toUriString();
 
         // setup headers
         HttpHeaders headers = new HttpHeaders();
-        headers.add("accept", "application/json");
-        headers.add("Authorization", apiKey);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("Authorization", apiKey);
         HttpEntity<String> entity = new HttpEntity<String>(headers);
 
         try {
@@ -78,10 +84,31 @@ public class TmdbApiService {
         return null;
     }
 
-    private String constructUrl(String endpoint, Integer tmdbMovieId) {
-        return UriComponentsBuilder.fromHttpUrl(baseUrl)
-                .pathSegment(endpoint, tmdbMovieId.toString())
-                .build()
+    public List<TmdbResponseResult> getMoviesFromTmdbSearchByName(String title) {
+        String url = UriComponentsBuilder.fromHttpUrl(baseUrl + "/search/movie")
+                .queryParam("query", title)
                 .toUriString();
+
+        // setup headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("Authorization", apiKey);
+        HttpEntity<String> entity = new HttpEntity<String>(headers);
+
+        try {
+            ResponseEntity<TmdbResponse> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity,
+                    TmdbResponse.class);
+            if (responseEntity.getStatusCode().is2xxSuccessful()) {
+                log.info("Movies retrieved successfully from tmdb: {}", responseEntity.getBody().getResults());
+                return responseEntity.getBody().getResults();
+            } else {
+                log.warn("Failed to retrieve movie, status code: {}", responseEntity.getStatusCode());
+            }
+        } catch (Exception e) {
+            log.error("Unexpected error getting movies from tMDB search. Details: {}", e.getMessage());
+        }
+
+        return null;
     }
+
 }

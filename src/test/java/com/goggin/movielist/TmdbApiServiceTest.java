@@ -2,29 +2,20 @@ package com.goggin.movielist;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.web.client.HttpClientErrorException;
-
 import com.goggin.movielist.exception.MovieNotFoundInTmdbException;
 import com.goggin.movielist.model.Movie;
-import com.goggin.movielist.respositories.MovieRepository;
+import com.goggin.movielist.model.TmdbResponseResult;
 import com.goggin.movielist.service.TmdbApiService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootTest
 @Slf4j
-public class TmdbApiServceTest {
+public class TmdbApiServiceTest {
 
     @Autowired
     private TmdbApiService tmdbApiService;
@@ -54,6 +45,26 @@ public class TmdbApiServceTest {
         assertThrows(MovieNotFoundInTmdbException.class, () -> {
             tmdbApiService.getMovieDetailsFromTmdbById(invalidMovieId);
         });
+
+    }
+
+    @Test
+    public void testGetMoviesFromTmdbSearchByName() throws MovieNotFoundInTmdbException {
+        // arrange
+        String searchTitle = "Jurassic Park";
+        log.info("Testing TMDB API by getting search for title Jurassic Park");
+
+        // act
+        Iterable<TmdbResponseResult> foundMovies = tmdbApiService.getMoviesFromTmdbSearchByName(searchTitle);
+
+        // assert
+        assertNotNull(foundMovies);
+        for (TmdbResponseResult movie : foundMovies) {
+            log.info("Received movie details = " + movie.getTitle());
+            assertNotNull(movie.getId(), "Movie ID should not be null");
+            assertNotNull(movie.getTitle(), "Movie Title should not be null");
+
+        }
 
     }
 

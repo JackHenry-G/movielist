@@ -6,17 +6,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.security.Principal;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.model.MovieConnection;
+import com.goggin.movielist.model.TmdbResponseResult;
 import com.goggin.movielist.service.MovieConnectionService;
 import com.goggin.movielist.service.MovieService;
 import com.goggin.movielist.service.TmdbApiService;
 import com.goggin.movielist.service.UserService;
-import com.goggin.movielist.service.UserTaskService;
-import com.goggin.movielist.service.GooglePlacesApiService;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,6 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
+@Slf4j
 public class MovieController {
 
     @Autowired
@@ -35,33 +38,10 @@ public class MovieController {
     private MovieService movieService;
 
     @Autowired
-    private TmdbApiService tmdbService;
-
-    @Autowired
-    private UserTaskService userTaskService;
+    private TmdbApiService tmdbApiService;
 
     @Autowired
     private MovieConnectionService movieConnectionService;
-
-    @Autowired
-    private GooglePlacesApiService googlePlacesApiService;
-
-    // ------------------------ For testing purposes
-
-    @GetMapping("/testemail")
-    public ResponseEntity<String> testEmail() {
-
-        userTaskService.scanVueCinemaAndSendEmail(userService.getCurrentUser());
-
-        return ResponseEntity.ok("Scan cinema and Email should've worked!"); // Returns 200 OK with the string
-    }
-
-    @GetMapping("/testgoogleapi")
-    public ResponseEntity<String> testGoogleApi() {
-        googlePlacesApiService.getPlaceUrlFromGooglePlacesApiTextSearch("Vue cinema", 8, userService.getCurrentUser());
-
-        return ResponseEntity.ok("Google Api should've worked!"); // Returns 200 OK with the string in the body
-    }
 
     // ----------------------------- base pages
 
@@ -87,8 +67,24 @@ public class MovieController {
 
     // return search page
     @GetMapping("/search")
-    public String findAllMovies() {
+    public String showSearchPage() {
         return "searchTmdb.html";
+    }
+
+    @GetMapping("/search/movies")
+    public ResponseEntity<List<TmdbResponseResult>> searchTmdbForMovies(@RequestParam String movieTitle, Model model) {
+        log.info("Query request param (movie title) = ", movieTitle);
+
+        try {
+            List<TmdbResponseResult> movies = tmdbApiService.getMoviesFromTmdbSearchByName(movieTitle);
+            if (movies != null) {
+                return new ResponseEntity<>(movies, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT); // or HttpStatus.NOT_FOUND
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     // ------------------------ Add a new movie -----------------------
@@ -100,7 +96,7 @@ public class MovieController {
 
         try {
             // call tmdb to get all details of movie
-            Movie tmdbMovie = tmdbService.getMovieDetailsFromTmdbById(tmdbMovieId);
+            Movie tmdbMovie = tmdbApiService.getMovieDetailsFromTmdbById(tmdbMovieId);
 
             Movie usersListMovie = movieService.addMovieToUsersList(userService.getCurrentUser(), tmdbMovie,
                     rating);
