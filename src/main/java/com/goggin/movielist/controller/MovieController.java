@@ -100,7 +100,7 @@ public class MovieController {
 
         try {
             // call tmdb to get all details of movie
-            Movie tmdbMovie = tmdbService.getMovieFromTmdb(tmdbMovieId);
+            Movie tmdbMovie = tmdbService.getMovieDetailsFromTmdbById(tmdbMovieId);
 
             Movie usersListMovie = movieService.addMovieToUsersList(userService.getCurrentUser(), tmdbMovie,
                     rating);
