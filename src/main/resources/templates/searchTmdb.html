@@ -79,14 +79,16 @@
         },
       };
 
-      fetch(
-        "https://api.themoviedb.org/3/search/movie?query=" +
-          searchTerm +
-          "&include_adult=false&language=en-US&page=1",
-        options
-      )
+      const baseUrl = window.location.origin; // Get the current origin (e.g., http://localhost:3000)
+      console.log("Base URL = " + baseUrl);
+      const url = `${baseUrl}/search/movies?movieTitle=${encodeURIComponent(
+        searchTerm
+      )}`;
+      console.log("New URL = " + url);
+
+      fetch(url, options)
         .then((response) => response.json())
-        .then((response) => displaySearchResults(response.results)) // logging the response
+        .then((response) => displaySearchResults(response)) // logging the response
         .catch((err) => console.error(err));
     }
 

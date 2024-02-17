@@ -27,6 +27,10 @@ public class Movie {
     @Column(name = "movie_id")
     private Integer movie_id; // only integer as takes less storage and am not anticipating loads of accounts
 
+    @JsonProperty("id")
+    @Column(name = "tmdb_id")
+    private int tmdb_id;
+
     @Column(unique = true)
     private String title;
 
@@ -78,6 +82,22 @@ public class Movie {
 
     public void setMovie_id(Integer movie_id) {
         this.movie_id = movie_id;
+    }
+
+    public int getTmdb_id() {
+        return tmdb_id;
+    }
+
+    public void setTmdb_id(int tmdb_id) {
+        this.tmdb_id = tmdb_id;
+    }
+
+    public Set<MovieConnection> getUserRatings() {
+        return userRatings;
+    }
+
+    public void setUserRatings(Set<MovieConnection> userRatings) {
+        this.userRatings = userRatings;
     }
 
     public String getTitle() {
