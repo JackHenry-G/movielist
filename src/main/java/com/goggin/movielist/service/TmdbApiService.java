@@ -1,6 +1,8 @@
 package com.goggin.movielist.service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,29 +38,19 @@ public class TmdbApiService {
     @Autowired
     private RestTemplate restTemplate;
 
-    /**
-     * This method communicates with the TMDB movie API, by executing a GET method
-     * to retrieve
-     * a singular movie and attached details, by the ID provided.
-     * It executes the request using the RestTemplate bean setup in WebConfig.
-     * 
-     * @param tmdbMovieId - the movie ID to search the API for
-     * @return Movie object with the relevant details mapped from the API response
-     * @throws MovieNotFoundInTmdbException
-     * @throws Exception
-     */
-    public Movie getMovieDetailsFromTmdbById(Integer tmdbMovieId) throws MovieNotFoundInTmdbException {
-        // configure details
-        String url = UriComponentsBuilder.fromHttpUrl(baseUrl + "/movie")
-                .pathSegment(tmdbMovieId.toString())
-                .build()
-                .toUriString();
+    public List<TmdbResponseResult> getMoviesFromTmdbByTitle(String title) {
+        Map<String, String> requestParams = Collections.singletonMap("query", title);
+        return getMoviesFromTmdb("/search/movie", null, requestParams);
+    }
 
-        // setup headers
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", apiKey);
-        HttpEntity<String> entity = new HttpEntity<String>(headers);
+    public List<TmdbResponseResult> getMoviesFromTmdbByYear(String year) {
+        Map<String, String> requestParams = Collections.singletonMap("primary_release_year", year);
+        return getMoviesFromTmdb("/discover/movie", null, requestParams);
+    }
+
+    public Movie getMovieDetailsFromTmdbById(Integer tmdbMovieId) throws MovieNotFoundInTmdbException {
+        String url = buildUrl("/movie", Integer.toString(tmdbMovieId), null);
+        HttpEntity<String> entity = createHttpEntity();
 
         try {
             ResponseEntity<Movie> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, Movie.class);
@@ -84,16 +76,10 @@ public class TmdbApiService {
         return null;
     }
 
-    public List<TmdbResponseResult> getMoviesFromTmdbSearchByName(String title) {
-        String url = UriComponentsBuilder.fromHttpUrl(baseUrl + "/search/movie")
-                .queryParam("query", title)
-                .toUriString();
-
-        // setup headers
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", apiKey);
-        HttpEntity<String> entity = new HttpEntity<String>(headers);
+    private List<TmdbResponseResult> getMoviesFromTmdb(String endpoint, String pathSegment,
+            Map<String, String> requestParams) {
+        String url = buildUrl(endpoint, pathSegment, requestParams);
+        HttpEntity<String> entity = createHttpEntity();
 
         try {
             ResponseEntity<TmdbResponse> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity,
@@ -109,6 +95,28 @@ public class TmdbApiService {
         }
 
         return null;
+    }
+
+    private String buildUrl(String endpoint, String pathSegment, Map<String, String> requestParams) {
+        UriComponentsBuilder urlBuilder = UriComponentsBuilder.fromHttpUrl(baseUrl + endpoint)
+                .queryParam("include_adult", "false")
+                .queryParam("include_video", "false")
+                .queryParam("language", "en-US");
+
+        if (pathSegment != null) {
+            urlBuilder.pathSegment(pathSegment);
+        } else if (requestParams != null && !requestParams.isEmpty()) {
+            requestParams.forEach(urlBuilder::queryParam); // add the dynamic request params
+        }
+
+        return urlBuilder.toUriString();
+    }
+
+    private HttpEntity<String> createHttpEntity() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("Authorization", apiKey);
+        return new HttpEntity<>(headers);
     }
 
 }

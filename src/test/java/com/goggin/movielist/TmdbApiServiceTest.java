@@ -55,7 +55,7 @@ public class TmdbApiServiceTest {
         log.info("Testing TMDB API by getting search for title Jurassic Park");
 
         // act
-        Iterable<TmdbResponseResult> foundMovies = tmdbApiService.getMoviesFromTmdbSearchByName(searchTitle);
+        Iterable<TmdbResponseResult> foundMovies = tmdbApiService.getMoviesFromTmdbByTitle(searchTitle);
 
         // assert
         assertNotNull(foundMovies);
@@ -64,6 +64,23 @@ public class TmdbApiServiceTest {
             assertNotNull(movie.getId(), "Movie ID should not be null");
             assertNotNull(movie.getTitle(), "Movie Title should not be null");
 
+        }
+
+    }
+
+    @Test
+    public void testGetMoviesFromTmdbByYear() throws MovieNotFoundInTmdbException {
+        // arrange
+        String year = "1999";
+
+        // act
+        Iterable<TmdbResponseResult> foundMovies = tmdbApiService.getMoviesFromTmdbByYear(year);
+
+        // assert
+        assertNotNull(foundMovies);
+        for (TmdbResponseResult movie : foundMovies) {
+            log.info("Received movie details = " + movie.getRelease_date());
+            assertEquals(year, movie.getRelease_date().substring(0, 4));
         }
 
     }

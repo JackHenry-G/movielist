@@ -76,7 +76,7 @@ public class MovieController {
         log.info("Query request param (movie title) = ", movieTitle);
 
         try {
-            List<TmdbResponseResult> movies = tmdbApiService.getMoviesFromTmdbSearchByName(movieTitle);
+            List<TmdbResponseResult> movies = tmdbApiService.getMoviesFromTmdbByTitle(movieTitle);
             if (movies != null) {
                 return new ResponseEntity<>(movies, HttpStatus.OK);
             } else {
