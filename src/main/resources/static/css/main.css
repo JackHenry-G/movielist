@@ -66,7 +66,7 @@ h3 {
   border: 2px solid black;
 }
 
-#logoutButton {
+.admin-buttons {
   position: absolute;
   width: 195px;
   bottom: 50px;
@@ -357,4 +357,9 @@ h3 {
 
 .user-form a:hover {
   text-decoration: underline;
+}
+
+input[readonly] {
+  background-color: #e0e0e0; /* Gray background */
+  color: #686868; /* Darker text color, optional */
 }

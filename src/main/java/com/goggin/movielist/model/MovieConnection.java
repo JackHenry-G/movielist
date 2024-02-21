@@ -9,11 +9,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import lombok.ToString;
 
 @Entity
 @Table(name = "movieconnections")
-@ToString
 public class MovieConnection {
 
     @Id
@@ -73,6 +71,16 @@ public class MovieConnection {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return "MovieConnection{" +
+                "movieConnectionId=" + movie_connection_id +
+                ", movie=" + (movie != null ? movie.getMovie_id() : "null") +
+                ", user=" + (movie != null ? user.getUser_id() : "null") +
+                ", rating=" + rating +
+                '}';
     }
 
 }

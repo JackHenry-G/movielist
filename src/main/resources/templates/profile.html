@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie List App!</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <script th:src="@{/js/movielistscript.js}" defer></script>
+    <script
+      src="https://kit.fontawesome.com/eb7c358919.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div th:replace="~{fragments/pageSetup.html :: frame}"></div>
+
+    <div class="content">
+      <div class="user-form">
+        <div th:if="${editSuccess}">
+          <p style="color: green" th:text="${editSuccess}"></p>
+        </div>
+
+        <div th:if="${editFailure}">
+          <p style="color: red" th:text="${editFailure}"></p>
+        </div>
+
+        <form th:action="@{/profile/edit}" method="post">
+          <label for="id">ID:</label>
+          <input
+            type="text"
+            name="ID"
+            placeholder="ID..."
+            th:value="${user.user_id}"
+            readonly
+          />
+
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username..."
+            th:value="${user.username}"
+          />
+
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

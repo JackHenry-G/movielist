@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.goggin.movielist.exception.UsernameAlreadyExistsException;
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.model.User;
 import com.goggin.movielist.service.MovieService;
@@ -45,6 +46,12 @@ public class AuthenticationController {
     @GetMapping("/signup")
     public String getSignUp() {
         return "signup.html";
+    }
+
+    @GetMapping("/profile")
+    public String getProfile(Model model) {
+        model.addAttribute("user", userService.getCurrentUser());
+        return "profile.html";
     }
 
     // -------------------------- testing purposes, quickly signup test user
@@ -130,6 +137,33 @@ public class AuthenticationController {
             }
         }
 
+    }
+
+    @PostMapping("/profile/edit")
+    public String editProfile(@ModelAttribute User user, BindingResult bindingResult,
+            RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("editFailure",
+                    "Validation error: " + bindingResult.getAllErrors().get(0).getDefaultMessage());
+            return "redirect:/profile";
+        } else {
+            try {
+                userService.updateUser(user);
+                log.info("User edited sucessfully: {}", user);
+
+                redirectAttributes.addFlashAttribute("editSuccess", "User successfully edited!");
+                return "redirect:/profile";
+            } catch (UsernameAlreadyExistsException e) {
+                log.error("Couldn't udpate the user as: {}", e.getMessage());
+                redirectAttributes.addFlashAttribute("editFailure", e.getMessage());
+                return "redirect:/profile";
+            } catch (Exception e) {
+                log.error("Issue updating user due to unexpected error: {}", e.getMessage());
+                redirectAttributes.addFlashAttribute("editFailure", e.getMessage());
+                return "redirect:/profile";
+            }
+        }
     }
 
 }
