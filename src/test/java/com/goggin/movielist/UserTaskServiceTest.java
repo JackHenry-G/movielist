@@ -22,8 +22,10 @@ public class UserTaskServiceTest {
         @Autowired
         private UserService userService;
 
-        @Test
+        // commented out and only used when I want to manually test the method
+        // @Test
         public void TestExecuteUserSpecificTasks() throws Exception {
+                // -- arrange ---
                 User user = new User(1, "jackhenryg@hotmail.co.uk", "test", "pwd", 51.5074, -0.1278);
                 userService.saveUser(user);
 
@@ -59,7 +61,7 @@ public class UserTaskServiceTest {
                 movieService.addMovieToUsersList(user, wish, 9.3); // at cinema
                 movieService.addMovieToUsersList(user, iceAge, 9.8); // at cinema
 
-                // see
+                // -- act ---
                 userTaskService.scanVueCinemaAndSendEmail(user);
         }
 }
