@@ -73,6 +73,7 @@ public class UserTaskService {
         Map<String, List<String>> movieAndCinemas = new HashMap<>(); // {"Wonka" : ["Vue Thurrock", "Vue Westfield"]}
 
         // initialize selenium web driver
+        log.info("initializing selenium web driver...");
         WebDriverManager.chromedriver().clearDriverCache().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // Set it once here

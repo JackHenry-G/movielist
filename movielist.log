@@ -1,859 +1,315 @@
-2024-02-21T19:13:03.893Z  INFO 3115 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 3115 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:13:03.899Z  INFO 3115 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:13:04.249Z  INFO 3115 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:13:04.285Z  INFO 3115 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:13:04.581Z  INFO 3115 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:13:04.585Z  INFO 3115 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:13:04.586Z  INFO 3115 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:13:04.640Z  INFO 3115 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:13:04.640Z  INFO 3115 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 713 ms
-2024-02-21T19:13:04.716Z  INFO 3115 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:13:04.760Z  INFO 3115 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:13:04.762Z  INFO 3115 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:13:04.910Z  INFO 3115 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:13:04.925Z  INFO 3115 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:13:05.955Z ERROR 3115 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2024-02-22T19:48:52.856Z  INFO 1526 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 1526 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
+2024-02-22T19:48:52.862Z  INFO 1526 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
+2024-02-22T19:48:53.336Z  INFO 1526 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-22T19:48:53.381Z  INFO 1526 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2024-02-22T19:48:53.715Z  INFO 1526 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-02-22T19:48:53.720Z  INFO 1526 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-22T19:48:53.720Z  INFO 1526 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-02-22T19:48:53.778Z  INFO 1526 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-22T19:48:53.779Z  INFO 1526 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 876 ms
+2024-02-22T19:48:53.879Z  INFO 1526 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-22T19:48:53.920Z  INFO 1526 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-22T19:48:53.922Z  INFO 1526 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-02-22T19:48:54.062Z  INFO 1526 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-22T19:48:54.076Z  INFO 1526 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-22T19:48:54.194Z  INFO 1526 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7eee6c13
+2024-02-22T19:48:54.194Z  INFO 1526 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-22T19:48:54.224Z  WARN 1526 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-22T19:48:54.722Z  INFO 1526 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-22T19:48:54.731Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.731Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
+2024-02-22T19:48:54.733Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.733Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
+2024-02-22T19:48:54.733Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.733Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
+2024-02-22T19:48:54.734Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.734Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2024-02-22T19:48:54.735Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.735Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-02-22T19:48:54.736Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.736Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
+2024-02-22T19:48:54.737Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.737Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2024-02-22T19:48:54.738Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:48:54.738Z  WARN 1526 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
+2024-02-22T19:48:54.784Z  INFO 1526 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-22T19:48:55.046Z  WARN 1526 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-22T19:48:55.093Z  INFO 1526 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-02-22T19:48:55.169Z  INFO 1526 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11b74ecb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78839c2e, org.springframework.security.web.context.SecurityContextHolderFilter@6ce24203, org.springframework.security.web.header.HeaderWriterFilter@64a8851a, org.springframework.security.web.authentication.logout.LogoutFilter@1a3a6216, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73476e2d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29811d4d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ffaa711, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25093079, org.springframework.security.web.access.ExceptionTranslationFilter@3b60be3, org.springframework.security.web.access.intercept.AuthorizationFilter@6c0bf8f4]
+2024-02-22T19:48:55.291Z  INFO 1526 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-02-22T19:48:55.296Z  INFO 1526 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.671 seconds (process running for 3.192)
+2024-02-22T19:48:55.297Z  INFO 1526 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+2024-02-22T19:48:57.605Z  INFO 1526 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-22T19:48:57.622Z  INFO 1526 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-22T19:48:57.627Z  INFO 1526 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-22T19:49:05.949Z  WARN 1661 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
 
-org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:279) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:193) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:69) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:216) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:231) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:199) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
-	at com.goggin.movielist.MovielistApplication.main(MovielistApplication.java:18) ~[classes/:na]
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
-	... 50 common frames omitted
+Found multiple occurrences of org.json.JSONObject on the class path:
 
-2024-02-21T19:13:05.965Z  WARN 3115 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+	jar:file:/Users/jackgoggin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/Users/jackgoggin/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
 
-java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:279) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:193) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:69) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:216) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:231) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:199) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
-	at com.goggin.movielist.MovielistApplication.main(MovielistApplication.java:18) ~[classes/:na]
+You may wish to exclude one of them to ensure predictable runtime behavior
 
-2024-02-21T19:13:05.988Z  WARN 3115 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:13:06.443Z  INFO 3115 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:13:06.449Z  INFO 3115 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:13:07.455Z ERROR 3115 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2024-02-22T19:49:05.959Z  INFO 1661 --- [main] c.goggin.movielist.UserTaskServiceTest   : Starting UserTaskServiceTest using Java 21.0.1 with PID 1661 (started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
+2024-02-22T19:49:05.959Z  INFO 1661 --- [main] c.goggin.movielist.UserTaskServiceTest   : The following 1 profile is active: "test"
+2024-02-22T19:49:06.282Z  INFO 1661 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-22T19:49:06.313Z  INFO 1661 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
+2024-02-22T19:49:06.587Z  INFO 1661 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-22T19:49:06.610Z  INFO 1661 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-22T19:49:06.611Z  INFO 1661 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-02-22T19:49:06.724Z  INFO 1661 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-22T19:49:06.743Z  INFO 1661 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-22T19:49:06.849Z  INFO 1661 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b01cb8d
+2024-02-22T19:49:06.850Z  INFO 1661 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-22T19:49:06.877Z  WARN 1661 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-22T19:49:07.324Z  INFO 1661 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-22T19:49:07.334Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.334Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
+2024-02-22T19:49:07.335Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.335Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
+2024-02-22T19:49:07.336Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.336Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
+2024-02-22T19:49:07.336Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.336Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2024-02-22T19:49:07.337Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.337Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-02-22T19:49:07.338Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.338Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
+2024-02-22T19:49:07.339Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.339Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2024-02-22T19:49:07.341Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:49:07.341Z  WARN 1661 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
+2024-02-22T19:49:07.377Z  INFO 1661 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-22T19:49:07.679Z  WARN 1661 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-22T19:49:07.743Z  INFO 1661 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4e212f46, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@629fe84, org.springframework.security.web.context.SecurityContextHolderFilter@5fe024a7, org.springframework.security.web.header.HeaderWriterFilter@4c5c0306, org.springframework.security.web.authentication.logout.LogoutFilter@4e111e08, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7d432bc0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bdf8c92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14d6ede3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6067e7c1, org.springframework.security.web.access.ExceptionTranslationFilter@647b3fd3, org.springframework.security.web.access.intercept.AuthorizationFilter@141eb85b]
+2024-02-22T19:49:07.884Z  INFO 1661 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-02-22T19:49:08.004Z  INFO 1661 --- [main] c.goggin.movielist.UserTaskServiceTest   : Started UserTaskServiceTest in 2.194 seconds (process running for 2.697)
+2024-02-22T19:49:08.655Z  INFO 1661 --- [main] c.g.movielist.service.UserTaskService    : scanVueCinemaAndSendEmail cron job started...
+2024-02-22T19:49:09.521Z  INFO 1661 --- [main] c.g.m.service.GooglePlacesApiService     : Sucessful Google Places APi requestcode: 200 OK
+2024-02-22T19:49:09.550Z  INFO 1661 --- [main] c.g.movielist.service.UserTaskService    : User's information successfully collected!
+2024-02-22T19:49:09.823Z  INFO 1661 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 121.0.6167.184 (resolved driver for Chrome 121)
+2024-02-22T19:49:09.855Z  INFO 1661 --- [main] i.g.bonigarcia.wdm.online.Downloader     : Downloading https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.184/mac-arm64/chromedriver-mac-arm64.zip
+2024-02-22T19:49:09.985Z ERROR 1661 --- [main] i.g.bonigarcia.wdm.online.HttpClient     : Error HTTP 500 executing https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.184/mac-arm64/chromedriver-mac-arm64.zip
+2024-02-22T19:49:09.986Z  INFO 1661 --- [main] i.g.b.wdm.cache.ResolutionCache          : Clearing WebDriverManager resolution cache
+2024-02-22T19:49:09.986Z  WARN 1661 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : There was an error managing chromedriver 121.0.6167.184 (Error HTTP 500 executing https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.184/mac-arm64/chromedriver-mac-arm64.zip) ... trying again avoiding reading release from repository
+2024-02-22T19:49:10.044Z  WARN 1661 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : There was an error managing chromedriver (latest version) (For input string: "public") ... trying again using latest driver stored in cache
+2024-02-22T19:49:10.045Z  INFO 1661 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver public (resolved driver for Chrome 121)
+2024-02-22T19:49:10.047Z ERROR 1661 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : There was an error managing chromedriver public (For input string: "public")
 
-org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.getIsolatedConnection(GenerationTargetToDatabase.java:60) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:112) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:79) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:455) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:242) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:215) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:185) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:155) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:115) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:242) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at java.base/java.util.HashMap.forEach(HashMap.java:1429) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:293) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1458) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
-	at com.goggin.movielist.MovielistApplication.main(MovielistApplication.java:18) ~[classes/:na]
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
-	... 57 common frames omitted
+java.lang.NumberFormatException: For input string: "public"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[na:na]
+	at java.base/java.lang.Integer.parseInt(Integer.java:661) ~[na:na]
+	at java.base/java.lang.Integer.parseInt(Integer.java:777) ~[na:na]
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.buildUrl(ChromeDriverManager.java:178) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.buildUrl(ChromeDriverManager.java:155) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.download(WebDriverManager.java:1272) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1189) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.fallback(WebDriverManager.java:1451) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1432) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1195) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1425) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1195) ~[webdrivermanager-5.6.2.jar:na]
+	at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:427) ~[webdrivermanager-5.6.2.jar:na]
+	at com.goggin.movielist.service.UserTaskService.scanVueCinemaAndSendEmail(UserTaskService.java:76) ~[classes/:na]
+	at com.goggin.movielist.UserTaskServiceTest.TestExecuteUserSpecificTasks(UserTaskServiceTest.java:63) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727) ~[junit-platform-commons-1.9.3.jar:1.9.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.9.3.jar:5.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60) ~[junit-platform-launcher-1.9.3.jar:1.9.3]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:98) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:757) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) ~[.cp/:na]
 
-2024-02-21T19:13:07.461Z  WARN 3115 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
-2024-02-21T19:13:07.462Z ERROR 3115 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
-2024-02-21T19:13:07.469Z ERROR 3115 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
-2024-02-21T19:13:07.470Z  WARN 3115 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
-2024-02-21T19:13:07.472Z  INFO 3115 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-02-21T19:13:07.487Z  INFO 3115 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2024-02-22T19:49:10.066Z  INFO 1661 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-22T19:49:10.089Z  INFO 1661 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-22T19:49:10.100Z  INFO 1661 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-22T19:53:44.584Z  WARN 2860 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
 
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-02-21T19:13:07.501Z ERROR 3115 --- [main] o.s.boot.SpringApplication               : Application run failed
+Found multiple occurrences of org.json.JSONObject on the class path:
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
-	at com.goggin.movielist.MovielistApplication.main(MovielistApplication.java:18) ~[classes/:na]
-Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
-	... 16 common frames omitted
-Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
-	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:98) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:56) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.getIsolatedConnection(GenerationTargetToDatabase.java:60) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:112) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:79) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:455) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:242) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:215) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:185) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:155) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:115) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:242) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at java.base/java.util.HashMap.forEach(HashMap.java:1429) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:293) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1458) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.13.jar:6.0.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.13.jar:6.0.13]
-	... 20 common frames omitted
-Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
-	... 43 common frames omitted
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
-	... 57 common frames omitted
+	jar:file:/Users/jackgoggin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/Users/jackgoggin/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
 
-2024-02-21T19:13:28.522Z  INFO 3254 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 3254 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:13:28.524Z  INFO 3254 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:13:28.956Z  INFO 3254 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:13:28.997Z  INFO 3254 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:13:29.316Z  INFO 3254 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:13:29.320Z  INFO 3254 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:13:29.320Z  INFO 3254 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:13:29.373Z  INFO 3254 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:13:29.373Z  INFO 3254 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 824 ms
-2024-02-21T19:13:29.473Z  INFO 3254 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:13:29.514Z  INFO 3254 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:13:29.515Z  INFO 3254 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:13:29.637Z  INFO 3254 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:13:29.650Z  INFO 3254 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:13:29.780Z  INFO 3254 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15c16f19
-2024-02-21T19:13:29.781Z  INFO 3254 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:13:29.808Z  WARN 3254 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:13:30.267Z  INFO 3254 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:13:30.280Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.281Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:13:30.281Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.281Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:13:30.282Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.282Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:13:30.282Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.282Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:13:30.283Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.283Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:13:30.283Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.283Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:13:30.284Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.284Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:13:30.284Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:13:30.284Z  WARN 3254 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:13:30.324Z  INFO 3254 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:13:30.581Z  WARN 3254 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:13:30.630Z  INFO 3254 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:13:30.713Z  INFO 3254 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@14764fdd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@402fdef1, org.springframework.security.web.context.SecurityContextHolderFilter@2ffaa711, org.springframework.security.web.header.HeaderWriterFilter@28f081ad, org.springframework.security.web.authentication.logout.LogoutFilter@193c810, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25093079, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34074149, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1500edf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69e8f7a5, org.springframework.security.web.access.ExceptionTranslationFilter@4cc28ad0, org.springframework.security.web.access.intercept.AuthorizationFilter@78839c2e]
-2024-02-21T19:13:30.857Z  INFO 3254 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:13:30.863Z  INFO 3254 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.529 seconds (process running for 2.923)
-2024-02-21T19:13:30.866Z  INFO 3254 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:13:38.310Z  INFO 3254 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T19:13:38.310Z  INFO 3254 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T19:13:38.311Z  INFO 3254 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-02-21T19:13:41.357Z  INFO 3254 --- [http-nio-8080-exec-6] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$aWJMVgBnZSQwlD9xqTxtK.NUi3pfcgu5L3ECa7M8LWSh6VLDNFSgi, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T19:13:55.092Z  INFO 3254 --- [http-nio-8080-exec-1] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:13:55.121Z  INFO 3254 --- [http-nio-8080-exec-1] c.goggin.movielist.service.UserService   : Current User1name: test
-2024-02-21T19:13:55.123Z  INFO 3254 --- [http-nio-8080-exec-1] c.goggin.movielist.service.UserService   : Current User2: [FAILED toString()]
-2024-02-21T19:13:55.138Z  INFO 3254 --- [http-nio-8080-exec-1] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=testtest, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:30:16.186Z  INFO 3254 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:30:16.201Z  INFO 3254 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T19:30:16.203Z  INFO 3254 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T19:30:17.042Z  INFO 9353 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 9353 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:30:17.043Z  INFO 9353 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:30:17.430Z  INFO 9353 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:30:17.465Z  INFO 9353 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:30:17.808Z  INFO 9353 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:30:17.813Z  INFO 9353 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:30:17.813Z  INFO 9353 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:30:17.871Z  INFO 9353 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:30:17.871Z  INFO 9353 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 789 ms
-2024-02-21T19:30:17.946Z  INFO 9353 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:30:17.967Z  INFO 9353 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:30:17.968Z  INFO 9353 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:30:18.096Z  INFO 9353 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:30:18.108Z  INFO 9353 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:30:18.204Z  INFO 9353 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a55fb81
-2024-02-21T19:30:18.205Z  INFO 9353 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:30:18.220Z  WARN 9353 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:30:18.661Z  INFO 9353 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:30:18.670Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.670Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:30:18.671Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.671Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:30:18.672Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.672Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:30:18.672Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.672Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:30:18.673Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.673Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:30:18.674Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.674Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:30:18.674Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.674Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:30:18.675Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:30:18.675Z  WARN 9353 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:30:18.709Z  INFO 9353 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:30:18.969Z  WARN 9353 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:30:19.014Z  INFO 9353 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:30:19.102Z  INFO 9353 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f571c0e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c7cbc2d, org.springframework.security.web.context.SecurityContextHolderFilter@507fecf3, org.springframework.security.web.header.HeaderWriterFilter@63218586, org.springframework.security.web.authentication.logout.LogoutFilter@6b64921f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a08d301, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bbac73d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@96448ee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36ae17ef, org.springframework.security.web.access.ExceptionTranslationFilter@2e2c9e24, org.springframework.security.web.access.intercept.AuthorizationFilter@5f1a3c4]
-2024-02-21T19:30:19.222Z  INFO 9353 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:30:19.228Z  INFO 9353 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.422 seconds (process running for 2.629)
-2024-02-21T19:30:19.230Z  INFO 9353 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:30:27.572Z  INFO 9353 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T19:30:27.573Z  INFO 9353 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T19:30:27.574Z  INFO 9353 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-02-21T19:30:28.834Z  INFO 9353 --- [http-nio-8080-exec-3] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$6fSQCETmiDm5kDASpfgBgezMdCGR1QjJcKpQak26pPalt3OwU4qPW, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T19:30:33.824Z  INFO 9353 --- [http-nio-8080-exec-5] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:30:33.850Z  INFO 9353 --- [http-nio-8080-exec-5] c.goggin.movielist.service.UserService   : Current User1name: test
-2024-02-21T19:30:33.852Z  INFO 9353 --- [http-nio-8080-exec-5] c.goggin.movielist.service.UserService   : User successfully updated: [FAILED toString()]
-2024-02-21T19:30:33.857Z  INFO 9353 --- [http-nio-8080-exec-5] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=testtesa, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:32:15.205Z ERROR 9353 --- [http-nio-8080-exec-2] c.g.m.c.AuthenticationController         : Issue signing up test user: Username already exists!
-2024-02-21T19:32:37.681Z  INFO 9353 --- [http-nio-8080-exec-10] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:32:37.713Z  INFO 9353 --- [http-nio-8080-exec-10] c.goggin.movielist.service.UserService   : Current User1name: test
-2024-02-21T19:32:37.717Z  INFO 9353 --- [http-nio-8080-exec-10] c.goggin.movielist.service.UserService   : User successfully updated: [FAILED toString()]
-2024-02-21T19:32:37.740Z  INFO 9353 --- [http-nio-8080-exec-10] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=testtestaset, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:37:17.975Z  INFO 9353 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:37:17.989Z  INFO 9353 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T19:37:17.990Z  INFO 9353 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T19:37:18.761Z  INFO 10570 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 10570 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:37:18.762Z  INFO 10570 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:37:19.145Z  INFO 10570 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:37:19.183Z  INFO 10570 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:37:19.569Z  INFO 10570 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:37:19.574Z  INFO 10570 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:37:19.575Z  INFO 10570 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:37:19.640Z  INFO 10570 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:37:19.640Z  INFO 10570 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 856 ms
-2024-02-21T19:37:19.743Z  INFO 10570 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:37:19.778Z  INFO 10570 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:37:19.779Z  INFO 10570 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:37:19.896Z  INFO 10570 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:37:19.907Z  INFO 10570 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:37:19.997Z  INFO 10570 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1322b575
-2024-02-21T19:37:19.997Z  INFO 10570 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:37:20.014Z  WARN 10570 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:37:20.455Z  INFO 10570 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:37:20.462Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.462Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:37:20.463Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.463Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:37:20.463Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.463Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:37:20.464Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.464Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:37:20.464Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.464Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:37:20.465Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.465Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:37:20.466Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.466Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:37:20.466Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:37:20.466Z  WARN 10570 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:37:20.499Z  INFO 10570 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:37:20.766Z  WARN 10570 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:37:20.826Z  INFO 10570 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:37:20.906Z  INFO 10570 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@402fdef1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69e8f7a5, org.springframework.security.web.context.SecurityContextHolderFilter@3abb6aa, org.springframework.security.web.header.HeaderWriterFilter@56fc2cea, org.springframework.security.web.authentication.logout.LogoutFilter@1ef7e4c7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@37fc7e3c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f7bf0f6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@759c53e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1013aa94, org.springframework.security.web.access.ExceptionTranslationFilter@29811d4d, org.springframework.security.web.access.intercept.AuthorizationFilter@25093079]
-2024-02-21T19:37:21.088Z  INFO 10570 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:37:21.094Z  INFO 10570 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.52 seconds (process running for 3.07)
-2024-02-21T19:37:21.096Z  INFO 10570 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:37:22.075Z  INFO 10570 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T19:37:22.076Z  INFO 10570 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T19:37:22.076Z  INFO 10570 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-02-21T19:37:26.380Z  INFO 10570 --- [http-nio-8080-exec-3] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$hfJcB0qEpHj40a4g9K57fOBAoX8B5zim89xYNrbCogXo6kDfiny5y, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T19:37:31.033Z ERROR 10570 --- [http-nio-8080-exec-5] c.g.m.c.AuthenticationController         : Issue signing up user class org.springframework.security.core.userdetails.User cannot be cast to class com.goggin.movielist.model.User (org.springframework.security.core.userdetails.User and com.goggin.movielist.model.User are in unnamed module of loader 'app')
-2024-02-21T19:48:28.716Z  INFO 10570 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:48:28.743Z  INFO 10570 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T19:48:28.745Z  INFO 10570 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T19:48:29.555Z  INFO 14406 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 14406 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:48:29.556Z  INFO 14406 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:48:29.967Z  INFO 14406 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:48:30.000Z  INFO 14406 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:48:30.344Z  INFO 14406 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:48:30.349Z  INFO 14406 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:48:30.349Z  INFO 14406 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:48:30.402Z  INFO 14406 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:48:30.402Z  INFO 14406 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 822 ms
-2024-02-21T19:48:30.506Z  INFO 14406 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:48:30.538Z  INFO 14406 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:48:30.539Z  INFO 14406 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:48:30.657Z  INFO 14406 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:48:30.670Z  INFO 14406 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:48:30.817Z  INFO 14406 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d2d8846
-2024-02-21T19:48:30.818Z  INFO 14406 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:48:30.839Z  WARN 14406 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:48:31.375Z  INFO 14406 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:48:31.383Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.384Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:48:31.385Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.385Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:48:31.385Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.385Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:48:31.386Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.386Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:48:31.387Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.387Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:48:31.387Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.387Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:48:31.388Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.388Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:48:31.388Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:48:31.388Z  WARN 14406 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:48:31.418Z  INFO 14406 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:48:31.664Z  WARN 14406 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:48:31.714Z  INFO 14406 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:48:31.802Z  INFO 14406 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75d9b73c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f1a3c4, org.springframework.security.web.context.SecurityContextHolderFilter@3c1d6ef0, org.springframework.security.web.header.HeaderWriterFilter@28c75c93, org.springframework.security.web.authentication.logout.LogoutFilter@6bfc5296, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a99744a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dd27116, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@507fecf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a08d301, org.springframework.security.web.access.ExceptionTranslationFilter@589a4305, org.springframework.security.web.access.intercept.AuthorizationFilter@55a2f08b]
-2024-02-21T19:48:31.951Z  INFO 14406 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:48:31.959Z  INFO 14406 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.608 seconds (process running for 2.815)
-2024-02-21T19:48:31.961Z  INFO 14406 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:48:33.357Z  INFO 14406 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T19:48:33.358Z  INFO 14406 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T19:48:33.359Z  INFO 14406 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-02-21T19:48:35.119Z  INFO 14406 --- [http-nio-8080-exec-3] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$6b7cZQGj1HbgebMX8pi.k.XxKaN96IH8oPvk6VLlTi84ixrKBdWKO, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T19:48:38.544Z ERROR 14406 --- [http-nio-8080-exec-2] c.g.m.c.AuthenticationController         : Issue updating user class org.springframework.security.core.userdetails.User cannot be cast to class com.goggin.movielist.model.User (org.springframework.security.core.userdetails.User and com.goggin.movielist.model.User are in unnamed module of loader 'app')
-2024-02-21T19:50:11.813Z  INFO 14406 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:50:11.830Z  INFO 14406 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T19:50:11.832Z  INFO 14406 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T19:50:12.277Z  INFO 14729 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 14729 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:50:12.278Z  INFO 14729 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:50:12.668Z  INFO 14729 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:50:12.704Z  INFO 14729 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:50:13.050Z  INFO 14729 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:50:13.054Z  INFO 14729 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:50:13.054Z  INFO 14729 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:50:13.106Z  INFO 14729 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:50:13.106Z  INFO 14729 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 804 ms
-2024-02-21T19:50:13.217Z  INFO 14729 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:50:13.247Z  INFO 14729 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:50:13.247Z  INFO 14729 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:50:13.364Z  INFO 14729 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:50:13.376Z  INFO 14729 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:50:13.474Z  INFO 14729 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d2d8846
-2024-02-21T19:50:13.475Z  INFO 14729 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:50:13.491Z  WARN 14729 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:50:13.936Z  INFO 14729 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:50:13.944Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.944Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:50:13.945Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.945Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:50:13.945Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.945Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:50:13.946Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.946Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:50:13.947Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.947Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:50:13.947Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.947Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:50:13.948Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.948Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:50:13.948Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:50:13.948Z  WARN 14729 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:50:13.980Z  INFO 14729 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:50:14.215Z  WARN 14729 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:50:14.279Z  INFO 14729 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:50:14.355Z  INFO 14729 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75d9b73c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f1a3c4, org.springframework.security.web.context.SecurityContextHolderFilter@3c1d6ef0, org.springframework.security.web.header.HeaderWriterFilter@28c75c93, org.springframework.security.web.authentication.logout.LogoutFilter@6bfc5296, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a99744a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dd27116, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@507fecf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a08d301, org.springframework.security.web.access.ExceptionTranslationFilter@589a4305, org.springframework.security.web.access.intercept.AuthorizationFilter@55a2f08b]
-2024-02-21T19:50:14.493Z  INFO 14729 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:50:14.499Z  INFO 14729 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.436 seconds (process running for 2.635)
-2024-02-21T19:50:14.501Z  INFO 14729 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:50:15.802Z  INFO 14729 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T19:50:15.802Z  INFO 14729 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T19:50:15.803Z  INFO 14729 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-02-21T19:50:17.682Z  INFO 14729 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$d1GV7cadn.ZsRWmgewkjrOfVhTJz96g05udX64ytf/ld5Va5Gvlte, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T19:50:20.484Z  INFO 14729 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:50:20.535Z  INFO 14729 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : Current User1name: test
-2024-02-21T19:50:20.537Z  INFO 14729 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : Current User2: [FAILED toString()]
-2024-02-21T19:50:20.555Z  INFO 14729 --- [http-nio-8080-exec-2] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=dfhsfhatest, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:53:58.053Z  INFO 14729 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:53:58.069Z  INFO 14729 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T19:53:58.070Z  INFO 14729 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T19:53:58.838Z  INFO 16072 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 16072 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:53:58.841Z  INFO 16072 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:53:59.207Z  INFO 16072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:53:59.247Z  INFO 16072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:53:59.593Z  INFO 16072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:53:59.597Z  INFO 16072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:53:59.598Z  INFO 16072 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:53:59.647Z  INFO 16072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:53:59.647Z  INFO 16072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 780 ms
-2024-02-21T19:53:59.743Z  INFO 16072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:53:59.771Z  INFO 16072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:53:59.772Z  INFO 16072 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:53:59.879Z  INFO 16072 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:53:59.891Z  INFO 16072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:53:59.985Z  INFO 16072 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@adafe19
-2024-02-21T19:53:59.986Z  INFO 16072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:54:00.001Z  WARN 16072 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:54:00.441Z  INFO 16072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:54:00.448Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.449Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:54:00.449Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.449Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:54:00.450Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.451Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:54:00.451Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.451Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:54:00.452Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.452Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:54:00.452Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.452Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:54:00.453Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.453Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:54:00.453Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:00.453Z  WARN 16072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:54:00.488Z  INFO 16072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:54:00.766Z  WARN 16072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:54:00.817Z  INFO 16072 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:54:00.893Z  INFO 16072 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37fc7e3c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c96bf1e, org.springframework.security.web.context.SecurityContextHolderFilter@28f081ad, org.springframework.security.web.header.HeaderWriterFilter@6ce24203, org.springframework.security.web.authentication.logout.LogoutFilter@dc24732, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@594965c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e30a8ef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f7bf0f6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7890324e, org.springframework.security.web.access.ExceptionTranslationFilter@5b27d03d, org.springframework.security.web.access.intercept.AuthorizationFilter@6ab6ec33]
-2024-02-21T19:54:01.046Z  INFO 16072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:54:01.052Z  INFO 16072 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.439 seconds (process running for 2.949)
-2024-02-21T19:54:01.054Z  INFO 16072 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:54:07.143Z  INFO 16072 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:54:07.156Z  INFO 16072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T19:54:07.158Z  INFO 16072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T19:54:07.968Z  INFO 16127 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 16127 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T19:54:07.969Z  INFO 16127 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T19:54:08.347Z  INFO 16127 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T19:54:08.383Z  INFO 16127 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
-2024-02-21T19:54:08.711Z  INFO 16127 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T19:54:08.715Z  INFO 16127 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T19:54:08.716Z  INFO 16127 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T19:54:08.772Z  INFO 16127 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T19:54:08.772Z  INFO 16127 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 778 ms
-2024-02-21T19:54:08.871Z  INFO 16127 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T19:54:08.893Z  INFO 16127 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T19:54:08.894Z  INFO 16127 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T19:54:09.008Z  INFO 16127 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T19:54:09.020Z  INFO 16127 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T19:54:09.112Z  INFO 16127 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27bc1d44
-2024-02-21T19:54:09.113Z  INFO 16127 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T19:54:09.127Z  WARN 16127 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T19:54:09.729Z  INFO 16127 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T19:54:09.737Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.738Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:54:09.739Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.739Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T19:54:09.740Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.740Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T19:54:09.741Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.741Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T19:54:09.741Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.741Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T19:54:09.742Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.742Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T19:54:09.743Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.743Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T19:54:09.745Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T19:54:09.745Z  WARN 16127 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T19:54:09.781Z  INFO 16127 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T19:54:10.024Z  WARN 16127 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T19:54:10.084Z  INFO 16127 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T19:54:10.171Z  INFO 16127 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66d73e2d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2433bcd4, org.springframework.security.web.context.SecurityContextHolderFilter@35217e0, org.springframework.security.web.header.HeaderWriterFilter@589a4305, org.springframework.security.web.authentication.logout.LogoutFilter@1fe37d27, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6e475994, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c1d6ef0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@341c0dfc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75d9b73c, org.springframework.security.web.access.ExceptionTranslationFilter@1828ab51, org.springframework.security.web.access.intercept.AuthorizationFilter@439d649c]
-2024-02-21T19:54:10.294Z  INFO 16127 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T19:54:10.300Z  INFO 16127 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.547 seconds (process running for 2.746)
-2024-02-21T19:54:10.302Z  INFO 16127 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T19:54:10.959Z  INFO 16127 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T19:54:10.959Z  INFO 16127 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T19:54:10.960Z  INFO 16127 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-02-21T19:54:13.200Z  INFO 16127 --- [http-nio-8080-exec-1] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$ZU4lb3Unx1LMLVS3bTJCgOIeat9itZkWTxsYJy6q7KFjIGpWUZUXq, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T19:54:16.409Z  INFO 16127 --- [http-nio-8080-exec-4] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:54:16.427Z  INFO 16127 --- [http-nio-8080-exec-4] c.goggin.movielist.service.UserService   : Current User1name: test
-2024-02-21T19:54:16.435Z  INFO 16127 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=testahdfsh, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:54:18.967Z  INFO 16127 --- [http-nio-8080-exec-7] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:54:18.993Z  INFO 16127 --- [http-nio-8080-exec-7] c.goggin.movielist.service.UserService   : Current User1name: testahdfsh
-2024-02-21T19:54:18.993Z  INFO 16127 --- [http-nio-8080-exec-7] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=testahdfsh, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:55:12.592Z  INFO 16127 --- [http-nio-8080-exec-4] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:55:12.620Z  INFO 16127 --- [http-nio-8080-exec-4] c.goggin.movielist.service.UserService   : Current User1name: testahdfsh
-2024-02-21T19:55:12.620Z  INFO 16127 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=testahdfsh, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T19:55:27.273Z  INFO 16127 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : User registered: User(user_id=2, email=jackhenryg@hotmail.co.uk, username=hello, password=$2a$10$n4YGstppU3PV80tK3HA8Teq4RiGIzOd4QAudy0zKyEvX4H.Hs25Mm, latitude=51.5531881, longitude=0.2051613, favouriteMovies=null)
-2024-02-21T19:55:49.752Z  INFO 16127 --- [http-nio-8080-exec-5] c.goggin.movielist.service.UserService   : Current User1: [FAILED toString()]
-2024-02-21T19:55:49.779Z  INFO 16127 --- [http-nio-8080-exec-5] c.goggin.movielist.service.UserService   : Current User1name: hello
-2024-02-21T19:55:49.784Z ERROR 16127 --- [http-nio-8080-exec-5] c.g.m.c.AuthenticationController         : Issue updating user: New username already exists!
-2024-02-21T20:09:18.375Z  INFO 16127 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:09:18.389Z  INFO 16127 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T20:09:18.390Z  INFO 16127 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T20:09:18.869Z  INFO 18723 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 18723 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T20:09:18.870Z  INFO 18723 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T20:09:19.201Z  INFO 18723 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T20:09:19.236Z  INFO 18723 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-2024-02-21T20:09:19.589Z  INFO 18723 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T20:09:19.594Z  INFO 18723 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T20:09:19.594Z  INFO 18723 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T20:09:19.653Z  INFO 18723 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T20:09:19.653Z  INFO 18723 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 757 ms
-2024-02-21T20:09:19.743Z  INFO 18723 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T20:09:19.767Z  INFO 18723 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T20:09:19.769Z  INFO 18723 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T20:09:19.911Z  INFO 18723 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T20:09:19.922Z  INFO 18723 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T20:09:20.012Z  INFO 18723 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27bc1d44
-2024-02-21T20:09:20.013Z  INFO 18723 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T20:09:20.028Z  WARN 18723 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T20:09:20.475Z  INFO 18723 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T20:09:20.484Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.485Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:09:20.486Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.486Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:09:20.487Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.487Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T20:09:20.488Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.488Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T20:09:20.488Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.488Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T20:09:20.489Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.489Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T20:09:20.490Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.490Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T20:09:20.491Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:09:20.491Z  WARN 18723 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T20:09:20.528Z  INFO 18723 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:09:20.770Z  WARN 18723 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T20:09:20.827Z  INFO 18723 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T20:09:20.899Z  INFO 18723 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66d73e2d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2433bcd4, org.springframework.security.web.context.SecurityContextHolderFilter@35217e0, org.springframework.security.web.header.HeaderWriterFilter@589a4305, org.springframework.security.web.authentication.logout.LogoutFilter@1fe37d27, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6e475994, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c1d6ef0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@341c0dfc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75d9b73c, org.springframework.security.web.access.ExceptionTranslationFilter@1828ab51, org.springframework.security.web.access.intercept.AuthorizationFilter@439d649c]
-2024-02-21T20:09:21.010Z  INFO 18723 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T20:09:21.016Z  INFO 18723 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.362 seconds (process running for 2.594)
-2024-02-21T20:09:21.017Z  INFO 18723 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T20:09:25.680Z  INFO 18723 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T20:09:25.680Z  INFO 18723 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T20:09:25.681Z  INFO 18723 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-02-21T20:09:27.517Z  INFO 18723 --- [http-nio-8080-exec-4] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$ol0GznpbtGWdK6cUCgHsXOo9zFgFKN5Jvrcoid18Srlf3h6M0Y4f., latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T20:09:30.950Z  INFO 18723 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : Updating user: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$ol0GznpbtGWdK6cUCgHsXOo9zFgFKN5Jvrcoid18Srlf3h6M0Y4f., latitude=51.5074, longitude=-0.1278, favouriteMovies=[MovieConnection{movieConnectionId=2, movie=2, user=1, rating=8.9}, MovieConnection{movieConnectionId=3, movie=3, user=1, rating=9.4}, MovieConnection{movieConnectionId=4, movie=4, user=1, rating=9.1}, MovieConnection{movieConnectionId=1, movie=1, user=1, rating=8.0}, MovieConnection{movieConnectionId=5, movie=5, user=1, rating=9.3}])
-2024-02-21T20:09:30.968Z  INFO 18723 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : Current authentication succesfully retrieved.
-2024-02-21T20:09:30.984Z  INFO 18723 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : Changed user's name in the database succesfully. Still need to set the new authetnication token.
-2024-02-21T20:09:30.985Z  INFO 18723 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : New authentication succesfully created. Not yet set.
-2024-02-21T20:09:30.985Z  INFO 18723 --- [http-nio-8080-exec-2] c.goggin.movielist.service.UserService   : New authentication succesfully set
-2024-02-21T20:09:30.985Z  INFO 18723 --- [http-nio-8080-exec-2] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=dsgatest, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T20:09:44.902Z  INFO 18723 --- [http-nio-8080-exec-3] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$0Yx.1YuSe0VN/yQLfdy5LO0g2bhkZQBFM6YYOmNTPFa2.cD3Qks/i, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T20:09:46.414Z ERROR 18723 --- [http-nio-8080-exec-6] c.g.m.c.AuthenticationController         : Issue signing up test user: Username already exists!
-2024-02-21T20:09:51.585Z ERROR 18723 --- [http-nio-8080-exec-9] c.g.m.c.AuthenticationController         : Issue signing up test user: Username already exists!
-2024-02-21T20:10:41.922Z ERROR 18723 --- [http-nio-8080-exec-5] c.g.m.c.AuthenticationController         : Issue signing up test user: Username already exists!
-2024-02-21T20:11:29.029Z  INFO 18723 --- [http-nio-8080-exec-9] c.g.m.c.AuthenticationController         : User registered: User(user_id=2, email=jackhenryg@hotmail.co.uk, username=Jackg5k, password=$2a$10$Svod12xEzsLd0w7W9dmJW.WWSiHOsEoj6VvQ82SeHBf4SkpIQ6zZu, latitude=51.5531895, longitude=0.205168, favouriteMovies=null)
-2024-02-21T20:12:18.441Z  INFO 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : Updating user: User(user_id=2, email=jackhenryg@hotmail.co.uk, username=Jackg5k, password=$2a$10$Svod12xEzsLd0w7W9dmJW.WWSiHOsEoj6VvQ82SeHBf4SkpIQ6zZu, latitude=51.5531895, longitude=0.205168, favouriteMovies=[MovieConnection{movieConnectionId=11, movie=1, user=2, rating=8.0}])
-2024-02-21T20:12:18.446Z  WARN 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : user tried to change to a username that already exists!
-2024-02-21T20:12:18.447Z ERROR 18723 --- [http-nio-8080-exec-8] c.g.m.c.AuthenticationController         : Couldn't udpate the user as: New username already exists!
-2024-02-21T20:12:56.308Z  INFO 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : Updating user: User(user_id=2, email=jackhenryg@hotmail.co.uk, username=Jackg5k, password=$2a$10$Svod12xEzsLd0w7W9dmJW.WWSiHOsEoj6VvQ82SeHBf4SkpIQ6zZu, latitude=51.5531895, longitude=0.205168, favouriteMovies=[MovieConnection{movieConnectionId=11, movie=1, user=2, rating=8.0}])
-2024-02-21T20:12:56.314Z  INFO 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : Current authentication succesfully retrieved.
-2024-02-21T20:12:56.319Z  INFO 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : Changed user's name in the database succesfully. Still need to set the new authetnication token.
-2024-02-21T20:12:56.319Z  INFO 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : New authentication succesfully created. Not yet set.
-2024-02-21T20:12:56.320Z  INFO 18723 --- [http-nio-8080-exec-8] c.goggin.movielist.service.UserService   : New authentication succesfully set
-2024-02-21T20:12:56.320Z  INFO 18723 --- [http-nio-8080-exec-8] c.g.m.c.AuthenticationController         : User edited sucessfully: User(user_id=null, email=null, username=Jackg5k1, password=null, latitude=0.0, longitude=0.0, favouriteMovies=null)
-2024-02-21T20:13:10.385Z  INFO 18723 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:13:10.402Z  INFO 18723 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T20:13:10.404Z  INFO 18723 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T20:13:10.847Z  INFO 20051 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 20051 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T20:13:10.849Z  INFO 20051 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T20:13:11.171Z  INFO 20051 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T20:13:11.204Z  INFO 20051 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
-2024-02-21T20:13:11.503Z  INFO 20051 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T20:13:11.507Z  INFO 20051 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T20:13:11.507Z  INFO 20051 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T20:13:11.557Z  INFO 20051 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T20:13:11.557Z  INFO 20051 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 684 ms
-2024-02-21T20:13:11.630Z  INFO 20051 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T20:13:11.651Z  INFO 20051 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T20:13:11.652Z  INFO 20051 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T20:13:11.766Z  INFO 20051 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T20:13:11.778Z  INFO 20051 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T20:13:11.882Z  INFO 20051 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a55fb81
-2024-02-21T20:13:11.882Z  INFO 20051 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T20:13:11.900Z  WARN 20051 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T20:13:12.342Z  INFO 20051 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T20:13:12.351Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.351Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:13:12.353Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.353Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:13:12.354Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.354Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T20:13:12.355Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.355Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T20:13:12.356Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.356Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T20:13:12.357Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.357Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T20:13:12.357Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.357Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T20:13:12.358Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:13:12.358Z  WARN 20051 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T20:13:12.393Z  INFO 20051 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:13:12.631Z  WARN 20051 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T20:13:12.677Z  INFO 20051 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T20:13:12.745Z  INFO 20051 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f571c0e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c7cbc2d, org.springframework.security.web.context.SecurityContextHolderFilter@507fecf3, org.springframework.security.web.header.HeaderWriterFilter@63218586, org.springframework.security.web.authentication.logout.LogoutFilter@6b64921f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a08d301, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bbac73d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@96448ee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36ae17ef, org.springframework.security.web.access.ExceptionTranslationFilter@2e2c9e24, org.springframework.security.web.access.intercept.AuthorizationFilter@5f1a3c4]
-2024-02-21T20:13:12.843Z  INFO 20051 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T20:13:12.848Z  INFO 20051 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.199 seconds (process running for 2.404)
-2024-02-21T20:13:12.849Z  INFO 20051 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T20:19:55.338Z  INFO 20051 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:19:55.359Z  INFO 20051 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T20:19:55.361Z  INFO 20051 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T20:19:56.003Z  INFO 21191 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 21191 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T20:19:56.006Z  INFO 21191 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T20:19:56.329Z  INFO 21191 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T20:19:56.370Z  INFO 21191 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
-2024-02-21T20:19:56.683Z  INFO 21191 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T20:19:56.688Z  INFO 21191 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T20:19:56.688Z  INFO 21191 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T20:19:56.744Z  INFO 21191 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T20:19:56.744Z  INFO 21191 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 716 ms
-2024-02-21T20:19:56.823Z  INFO 21191 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T20:19:56.866Z  INFO 21191 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T20:19:56.867Z  INFO 21191 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T20:19:56.985Z  INFO 21191 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T20:19:56.996Z  INFO 21191 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T20:19:57.081Z  INFO 21191 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1322b575
-2024-02-21T20:19:57.082Z  INFO 21191 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T20:19:57.097Z  WARN 21191 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T20:19:57.535Z  INFO 21191 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T20:19:57.542Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.542Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:19:57.543Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.543Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:19:57.544Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.544Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T20:19:57.545Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.546Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T20:19:57.546Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.546Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T20:19:57.547Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.547Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T20:19:57.548Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.548Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T20:19:57.548Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:19:57.548Z  WARN 21191 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T20:19:57.585Z  INFO 21191 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:19:57.850Z  WARN 21191 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T20:19:57.895Z  INFO 21191 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T20:19:57.964Z  INFO 21191 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@402fdef1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69e8f7a5, org.springframework.security.web.context.SecurityContextHolderFilter@3abb6aa, org.springframework.security.web.header.HeaderWriterFilter@56fc2cea, org.springframework.security.web.authentication.logout.LogoutFilter@1ef7e4c7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@37fc7e3c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f7bf0f6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@759c53e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1013aa94, org.springframework.security.web.access.ExceptionTranslationFilter@29811d4d, org.springframework.security.web.access.intercept.AuthorizationFilter@25093079]
-2024-02-21T20:19:58.089Z  INFO 21191 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T20:19:58.095Z  INFO 21191 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.28 seconds (process running for 2.712)
-2024-02-21T20:19:58.097Z  INFO 21191 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
-2024-02-21T20:20:05.527Z  INFO 21191 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-02-21T20:20:05.528Z  INFO 21191 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-02-21T20:20:05.529Z  INFO 21191 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-02-21T20:20:14.696Z  INFO 21191 --- [http-nio-8080-exec-6] c.g.m.c.AuthenticationController         : Test user registered: User(user_id=1, email=jackhenryg@hotmail.co.uk, username=test, password=$2a$10$9ODF.M9bbsX0/YDuQjiUku6Aims5quNtnP0nnSu0jVBPKcfo7ws32, latitude=51.5074, longitude=-0.1278, favouriteMovies=null)
-2024-02-21T20:45:44.799Z  INFO 21191 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:45:44.814Z  INFO 21191 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-02-21T20:45:44.818Z  INFO 21191 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-02-21T20:45:45.644Z  INFO 30527 --- [main] c.goggin.movielist.MovielistApplication  : Starting MovielistApplication using Java 21.0.1 with PID 30527 (/Users/jackgoggin/Documents/Coding/MovieList/movielist/target/classes started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
-2024-02-21T20:45:45.647Z  INFO 30527 --- [main] c.goggin.movielist.MovielistApplication  : The following 1 profile is active: "test"
-2024-02-21T20:45:46.069Z  INFO 30527 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-21T20:45:46.102Z  INFO 30527 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 3 JPA repository interfaces.
-2024-02-21T20:45:46.452Z  INFO 30527 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-02-21T20:45:46.458Z  INFO 30527 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-02-21T20:45:46.459Z  INFO 30527 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-02-21T20:45:46.521Z  INFO 30527 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-02-21T20:45:46.521Z  INFO 30527 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 846 ms
-2024-02-21T20:45:46.618Z  INFO 30527 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-21T20:45:46.640Z  INFO 30527 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-02-21T20:45:46.644Z  INFO 30527 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-02-21T20:45:46.767Z  INFO 30527 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-21T20:45:46.781Z  INFO 30527 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-02-21T20:45:46.880Z  INFO 30527 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d2d8846
-2024-02-21T20:45:46.881Z  INFO 30527 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-02-21T20:45:46.895Z  WARN 30527 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-02-21T20:45:47.347Z  INFO 30527 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-21T20:45:47.355Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.355Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:45:47.357Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.357Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
-2024-02-21T20:45:47.357Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.357Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
-2024-02-21T20:45:47.358Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.358Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
-2024-02-21T20:45:47.359Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.359Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2024-02-21T20:45:47.359Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.359Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
-2024-02-21T20:45:47.360Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.360Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
-2024-02-21T20:45:47.360Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2024-02-21T20:45:47.361Z  WARN 30527 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
-2024-02-21T20:45:47.403Z  INFO 30527 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-21T20:45:47.645Z  WARN 30527 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-21T20:45:47.703Z  INFO 30527 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-21T20:45:47.789Z  INFO 30527 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75d9b73c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f1a3c4, org.springframework.security.web.context.SecurityContextHolderFilter@3c1d6ef0, org.springframework.security.web.header.HeaderWriterFilter@28c75c93, org.springframework.security.web.authentication.logout.LogoutFilter@6bfc5296, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a99744a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dd27116, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@507fecf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a08d301, org.springframework.security.web.access.ExceptionTranslationFilter@589a4305, org.springframework.security.web.access.intercept.AuthorizationFilter@55a2f08b]
-2024-02-21T20:45:47.911Z  INFO 30527 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-02-21T20:45:47.917Z  INFO 30527 --- [main] c.goggin.movielist.MovielistApplication  : Started MovielistApplication in 2.476 seconds (process running for 2.687)
-2024-02-21T20:45:47.919Z  INFO 30527 --- [main] c.goggin.movielist.MovielistApplication  : App started running!
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-02-22T19:53:44.595Z  INFO 2860 --- [main] c.goggin.movielist.UserTaskServiceTest   : Starting UserTaskServiceTest using Java 21.0.1 with PID 2860 (started by jackgoggin in /Users/jackgoggin/Documents/Coding/MovieList/movielist)
+2024-02-22T19:53:44.595Z  INFO 2860 --- [main] c.goggin.movielist.UserTaskServiceTest   : The following 1 profile is active: "test"
+2024-02-22T19:53:44.900Z  INFO 2860 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-22T19:53:44.929Z  INFO 2860 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 3 JPA repository interfaces.
+2024-02-22T19:53:45.187Z  INFO 2860 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-22T19:53:45.223Z  INFO 2860 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-22T19:53:45.224Z  INFO 2860 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-02-22T19:53:45.341Z  INFO 2860 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-22T19:53:45.359Z  INFO 2860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-22T19:53:45.469Z  INFO 2860 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b56ec6c
+2024-02-22T19:53:45.470Z  INFO 2860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-22T19:53:45.486Z  WARN 2860 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-22T19:53:45.958Z  INFO 2860 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-22T19:53:45.968Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.969Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
+2024-02-22T19:53:45.969Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.969Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "movieconnections" does not exist, skipping
+2024-02-22T19:53:45.970Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.970Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movieconnections" does not exist, skipping
+2024-02-22T19:53:45.971Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.971Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "movies" does not exist, skipping
+2024-02-22T19:53:45.972Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.972Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-02-22T19:53:45.973Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.973Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movieconnections_seq" does not exist, skipping
+2024-02-22T19:53:45.974Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.975Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "movies_seq" does not exist, skipping
+2024-02-22T19:53:45.976Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-22T19:53:45.976Z  WARN 2860 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "users_seq" does not exist, skipping
+2024-02-22T19:53:46.010Z  INFO 2860 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-22T19:53:46.271Z  WARN 2860 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-22T19:53:46.332Z  INFO 2860 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@59263f7b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ddcd3d, org.springframework.security.web.context.SecurityContextHolderFilter@48b01607, org.springframework.security.web.header.HeaderWriterFilter@4e68aede, org.springframework.security.web.authentication.logout.LogoutFilter@7f08c343, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e0e3048, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@408b2ae2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c5c0306, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@447a557b, org.springframework.security.web.access.ExceptionTranslationFilter@531292ed, org.springframework.security.web.access.intercept.AuthorizationFilter@4e111e08]
+2024-02-22T19:53:46.469Z  INFO 2860 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-02-22T19:53:46.561Z  INFO 2860 --- [main] c.goggin.movielist.UserTaskServiceTest   : Started UserTaskServiceTest in 2.102 seconds (process running for 2.59)
+2024-02-22T19:53:47.114Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : scanVueCinemaAndSendEmail cron job started...
+2024-02-22T19:53:47.791Z  INFO 2860 --- [main] c.g.m.service.GooglePlacesApiService     : Sucessful Google Places APi requestcode: 200 OK
+2024-02-22T19:53:47.815Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : User's information successfully collected!
+2024-02-22T19:53:47.816Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : initializing selenium web driver...
+2024-02-22T19:53:53.258Z  INFO 2860 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 122.0.6261.57 (resolved driver for Chrome 122)
+2024-02-22T19:53:53.286Z  INFO 2860 --- [main] i.g.bonigarcia.wdm.online.Downloader     : Downloading https://storage.googleapis.com/chrome-for-testing-public/122.0.6261.57/mac-arm64/chromedriver-mac-arm64.zip
+2024-02-22T19:53:56.175Z  INFO 2860 --- [main] i.g.bonigarcia.wdm.online.Downloader     : Extracting driver from compressed file chromedriver-mac-arm64.zip
+2024-02-22T19:53:56.269Z  INFO 2860 --- [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as /Users/jackgoggin/.cache/selenium/chromedriver/mac-arm64/122.0.6261.57/chromedriver
+2024-02-22T19:53:57.852Z  WARN 2860 --- [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 122, so returning the closest version found: 120
+2024-02-22T19:53:57.865Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Selenium web driver succesfully initialized, beginning searches on the below cinemas:
+2024-02-22T19:53:57.866Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Piccadilly
+2024-02-22T19:53:57.866Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - West End (Leicester Square)
+2024-02-22T19:53:57.866Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Islington
+2024-02-22T19:53:57.869Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Fulham Broadway
+2024-02-22T19:53:57.870Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Finchley Road
+2024-02-22T19:53:57.870Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Shepherd's bush
+2024-02-22T19:53:57.870Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Westfield (Shepherd's Bush)
+2024-02-22T19:53:57.872Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Vue Cinema London - Westfield Stratford
+2024-02-22T19:53:57.873Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Piccadilly
+2024-02-22T19:53:59.327Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:53:59.372Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:53:59.956Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - West End (Leicester Square)
+2024-02-22T19:54:00.833Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:00.882Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:01.813Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Islington
+2024-02-22T19:54:02.438Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:02.590Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:03.543Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Fulham Broadway
+2024-02-22T19:54:04.205Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:04.314Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:04.853Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Finchley Road
+2024-02-22T19:54:05.467Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:05.508Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:06.143Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Shepherd's bush
+2024-02-22T19:54:06.724Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:06.772Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:07.422Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Westfield (Shepherd's Bush)
+2024-02-22T19:54:08.056Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:08.126Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:09.673Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Starting process with - Vue Cinema London - Westfield Stratford
+2024-02-22T19:54:10.374Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Website driver retrieved
+2024-02-22T19:54:10.424Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Reject cookies button found and clicked.
+2024-02-22T19:54:11.932Z  WARN 2860 --- [AsyncHttpClient-1-4] o.a.netty.handler.WebSocketHandler       : onError
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434) ~[na:na]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254) ~[netty-buffer-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.100.Final.jar:4.1.100.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-02-22T19:54:11.935Z  WARN 2860 --- [AsyncHttpClient-1-4] o.openqa.selenium.remote.http.WebSocket  : Connection reset
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434) ~[na:na]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254) ~[netty-buffer-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.100.Final.jar:4.1.100.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.100.Final.jar:4.1.100.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-02-22T19:54:12.051Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Selenium searches successful!
+2024-02-22T19:54:12.051Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : Beginning email process!
+2024-02-22T19:54:13.031Z  INFO 2860 --- [main] c.goggin.movielist.service.EmailService  : Email sent succesfully...
+2024-02-22T19:54:13.032Z  INFO 2860 --- [main] c.g.movielist.service.UserTaskService    : scanVueCinemaAndSendEmail cron job finished
+2024-02-22T19:54:13.053Z  INFO 2860 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-22T19:54:13.073Z  INFO 2860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-22T19:54:13.076Z  INFO 2860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
