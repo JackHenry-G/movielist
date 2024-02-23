@@ -16,6 +16,7 @@ import com.goggin.movielist.exception.UsernameAlreadyExistsException;
 import com.goggin.movielist.model.User;
 import com.goggin.movielist.respositories.UserRepository;
 
+import io.micrometer.common.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -42,11 +43,13 @@ public class UserService implements UserDetailsService {
 
     public void updateUser(User updatedUser) throws UsernameAlreadyExistsException {
         User currentUser = getCurrentUser();
-        log.info("Updating current user: {}", currentUser);
+        log.info("Update user called...");
+        log.info("Current user: {}", currentUser);
+        log.info("Requested to update to this user: {}", updatedUser);
 
         String currentUsername = currentUser.getUsername();
         String newUsername = updatedUser.getUsername();
-        if (newUsername != null) {
+        if (!StringUtils.isBlank(newUsername)) {
             if (userRepository.existsByUsername(newUsername)) {
                 log.warn("User tried to change to a username that is taken by somebody else!");
                 throw new UsernameAlreadyExistsException("New username is taken by somebody else!");

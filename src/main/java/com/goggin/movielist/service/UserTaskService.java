@@ -18,7 +18,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.goggin.movielist.model.Place;
@@ -44,7 +43,7 @@ public class UserTaskService {
     @Autowired
     private GooglePlacesApiService googlePlacesApiService;
 
-    @Scheduled(cron = "0 0 0 * * ?")
+    // @Scheduled(cron = "0 0 0 * * ?")
     public void executeUserSpecificTasks() {
         List<User> users = userRepository.findAll(); // Fetch all users
 

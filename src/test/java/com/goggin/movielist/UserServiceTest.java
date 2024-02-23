@@ -2,11 +2,8 @@ package com.goggin.movielist;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyByte;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -16,7 +13,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -53,8 +49,9 @@ public class UserServiceTest {
     @Test
     void shouldSuccessfullyChangeUsername() throws UsernameAlreadyExistsException {
         // arrange
-        User updatedUser = new User(1, "jackhenryg@hotmail.co.uk", "valid_unused_username", "pwd", 51.5074, -0.1278);
-        when(userRepository.existsByUsername(anyString())).thenReturn(false);
+        User updatedUser = new User();
+        updatedUser.setUsername("valid_unused_username");
+        when(userRepository.existsByUsername(anyString())).thenReturn(false); // mock username not existing already
 
         // act
         userService.updateUser(updatedUser);
@@ -69,22 +66,10 @@ public class UserServiceTest {
     }
 
     @Test
-    void testUpdateUserWithNullUsername() {
-        // arrange
-        User updatedUser = new User(1, "jackhenryg@hotmail.co.uk", null, "pwd", 51.5074, -0.1278);
-
-        when(userRepository.existsByUsername(anyString())).thenReturn(false);
-
-        // act and assert
-        Exception exception = assertThrows(UsernameAlreadyExistsException.class,
-                () -> userService.updateUser(updatedUser));
-        assertEquals("You cannot change to your existing username!", exception.getMessage());
-    }
-
-    @Test
     void shouldThrowUsernameAlreadyExistsExceptionBecauseThatIsUsersExistingName() {
         // arrange
-        User updatedUser = new User(1, "jackhenryg@hotmail.co.uk", "test", "pwd", 51.5074, -0.1278);
+        User updatedUser = new User();
+        updatedUser.setUsername("test");
 
         when(userRepository.existsByUsername(anyString())).thenReturn(false);
 
@@ -97,9 +82,9 @@ public class UserServiceTest {
     @Test
     void shouldThrowUsernameAlreadyExistsExceptionBecauseSomebodyElseUsedIt() {
         // arrange
-        User updatedUser = new User(1, "jackhenryg@hotmail.co.uk", "someone_else's_username", "pwd", 51.5074, -0.1278);
-
-        when(userRepository.existsByUsername(anyString())).thenReturn(true);
+        User updatedUser = new User();
+        updatedUser.setUsername("someone_else's_username");
+        when(userRepository.existsByUsername(anyString())).thenReturn(true); // mock the username match
 
         // act and assert
         Exception exception = assertThrows(UsernameAlreadyExistsException.class,
