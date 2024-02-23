@@ -56,28 +56,25 @@ public class UserService implements UserDetailsService {
             } else if (newUsername.equals(currentUser.getUsername())) {
                 log.warn("User tried to change to their own username!");
                 throw new UsernameAlreadyExistsException("You cannot change to your existing username!");
-            } else {
-                // get current authentication from the security context
-                Authentication oldAuth = SecurityContextHolder.getContext().getAuthentication();
-                log.info("Current authentication succesfully retrieved.");
-
-                // change the username
-                currentUser.setUsername(newUsername); // change field
-                userRepository.save(currentUser); // save to database
-                log.info(
-                        "Changed user's name in the database succesfully from '{}' to '{}'. Still need to set the new authetnication token.",
-                        currentUsername, newUsername);
-
-                // Create and set the new authentication token with the new username
-                // this prevents user from being logged out once the details change
-                UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(newUsername,
-                        oldAuth.getCredentials(), oldAuth.getAuthorities());
-                log.info("New authentication succesfully created. Not yet set.");
-
-                SecurityContextHolder.getContext().setAuthentication(newAuth);
-                log.info("New authentication succesfully set.");
             }
+            currentUser.setUsername(newUsername); // change field
+            log.info(
+                    "Will change user's name in the database succesfully from '{}' to '{}'.",
+                    currentUsername, newUsername);
         }
+
+        // change the username
+        userRepository.save(currentUser); // save to database
+        log.info("Updates succesfully made in database...");
+
+        // set authentication to new user details
+        // to ensure user doesn't get logged out after profile change
+        Authentication oldAuth = SecurityContextHolder.getContext().getAuthentication();
+        UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(newUsername,
+                oldAuth.getCredentials(), oldAuth.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(newAuth);
+        log.info("Authetnication succesfully updated...");
+
     }
 
     public User getCurrentUser() {
