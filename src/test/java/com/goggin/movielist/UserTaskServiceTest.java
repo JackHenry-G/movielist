@@ -27,7 +27,7 @@ public class UserTaskServiceTest {
         public void TestExecuteUserSpecificTasks() throws Exception {
                 // -- arrange ---
                 User user = new User(1, "jackhenryg@hotmail.co.uk", "test", "pwd", 51.5074, -0.1278);
-                userService.saveUser(user);
+                userService.saveNewUser(user);
 
                 // save default movie to the database (need to change this all around)
                 Movie laLaLand = new Movie(230423, "La La Land", "2016-02-09", 128, "Ryan Gosling is the man",

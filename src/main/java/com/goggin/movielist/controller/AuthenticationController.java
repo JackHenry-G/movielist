@@ -62,7 +62,7 @@ public class AuthenticationController {
         // !!!!!!!!!!!!!!!!! PRE-REGISTER A USER TO MAKE TESTING QUICKER
         try {
             User user = new User(1, "jackhenryg@hotmail.co.uk", "test", "pwd", 51.5074, -0.1278);
-            userService.saveUser(user);
+            userService.saveNewUser(user);
 
             // save default movie to the database (need to change this all around)
             Movie laLaLand = new Movie(230423, "La La Land", "2016-02-09", 128, "Ryan Gosling is the man",
@@ -119,7 +119,7 @@ public class AuthenticationController {
             return "redirect:/signup";
         } else {
             try {
-                userService.saveUser(user);
+                userService.saveNewUser(user);
                 log.info("User registered: " + user.toString());
 
                 // save default movie to the database so user has one in place already

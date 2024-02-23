@@ -30,7 +30,7 @@ public class UserService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-    public void saveUser(User user) {
+    public void saveNewUser(User user) {
         if (userRepository.existsByUsername(user.getUsername())) {
             throw new RuntimeException("Username already exists!");
         } else {
@@ -42,13 +42,17 @@ public class UserService implements UserDetailsService {
 
     public void updateUser(User updatedUser) throws UsernameAlreadyExistsException {
         User currentUser = getCurrentUser();
-        log.info("Updating user: {}", currentUser);
+        log.info("Updating current user: {}", currentUser);
 
+        String currentUsername = currentUser.getUsername();
         String newUsername = updatedUser.getUsername();
-        if (newUsername != null && !newUsername.equals(currentUser.getUsername())) {
+        if (newUsername != null) {
             if (userRepository.existsByUsername(newUsername)) {
-                log.warn("user tried to change to a username that already exists!");
-                throw new UsernameAlreadyExistsException("New username already exists!");
+                log.warn("User tried to change to a username that is taken by somebody else!");
+                throw new UsernameAlreadyExistsException("New username is taken by somebody else!");
+            } else if (newUsername.equals(currentUser.getUsername())) {
+                log.warn("User tried to change to their own username!");
+                throw new UsernameAlreadyExistsException("You cannot change to your existing username!");
             } else {
                 // get current authentication from the security context
                 Authentication oldAuth = SecurityContextHolder.getContext().getAuthentication();
@@ -58,18 +62,17 @@ public class UserService implements UserDetailsService {
                 currentUser.setUsername(newUsername); // change field
                 userRepository.save(currentUser); // save to database
                 log.info(
-                        "Changed user's name in the database succesfully. Still need to set the new authetnication token.");
+                        "Changed user's name in the database succesfully from '{}' to '{}'. Still need to set the new authetnication token.",
+                        currentUsername, newUsername);
 
                 // Create and set the new authentication token with the new username
                 // this prevents user from being logged out once the details change
-                UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(
-                        newUsername,
+                UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(newUsername,
                         oldAuth.getCredentials(), oldAuth.getAuthorities());
                 log.info("New authentication succesfully created. Not yet set.");
 
                 SecurityContextHolder.getContext().setAuthentication(newAuth);
-                log.info("New authentication succesfully set");
-
+                log.info("New authentication succesfully set.");
             }
         }
     }
