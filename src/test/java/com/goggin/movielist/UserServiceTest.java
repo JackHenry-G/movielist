@@ -11,8 +11,10 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -25,8 +27,8 @@ import com.goggin.movielist.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@SpringBootTest
 @Slf4j
+@ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
 
     @Mock
