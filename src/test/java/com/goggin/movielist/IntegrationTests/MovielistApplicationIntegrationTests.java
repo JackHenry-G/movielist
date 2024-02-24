@@ -1,4 +1,4 @@
-package com.goggin.movielist;
+package com.goggin.movielist.IntegrationTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,7 +10,7 @@ import com.goggin.movielist.controller.MovieController;
 
 @SpringBootTest // tells spring boot to look for a main config claass (@SpringBootApplication)
 				// and use that to start a spring application context
-class MovielistApplicationTests {
+class MovielistApplicationIntegrationTests {
 
 	@Autowired // inject the controller before the test runs e.g. = new MovieController()
 	private MovieController movieController;

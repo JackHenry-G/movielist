@@ -1,4 +1,4 @@
-package com.goggin.movielist;
+package com.goggin.movielist.IntegrationTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @SpringBootTest
 @Slf4j
-public class TmdbApiServiceTest {
+public class TmdbApiServiceIntegrationTest {
 
     @Autowired
     private TmdbApiService tmdbApiService;

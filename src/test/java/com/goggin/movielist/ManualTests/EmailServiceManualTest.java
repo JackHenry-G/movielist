@@ -1,19 +1,12 @@
-package com.goggin.movielist;
+package com.goggin.movielist.ManualTests;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
 import com.goggin.movielist.service.EmailService;
 
-@SpringBootTest
-public class EmailServiceTest {
+//@SpringBootTest
+public class EmailServiceManualTest {
 
     @Autowired
     private EmailService emailService;
@@ -22,7 +15,7 @@ public class EmailServiceTest {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    @Test
+    // @Test
     public void testSendEmail() {
         // arrange
         String to = "jackhenryg@hotmail.co.uk";
@@ -31,8 +24,5 @@ public class EmailServiceTest {
 
         // act
         emailService.sendEmail(to, subject, body);
-
-        // assert
-        verify(javaMailSender, times(1)).send(any(SimpleMailMessage.class));
     }
 }

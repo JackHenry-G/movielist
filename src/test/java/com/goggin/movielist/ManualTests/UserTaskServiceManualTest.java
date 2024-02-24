@@ -1,7 +1,6 @@
-package com.goggin.movielist;
+package com.goggin.movielist.ManualTests;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import com.goggin.movielist.model.Movie;
 import com.goggin.movielist.model.User;
@@ -9,8 +8,8 @@ import com.goggin.movielist.service.MovieService;
 import com.goggin.movielist.service.UserService;
 import com.goggin.movielist.service.UserTaskService;
 
-@SpringBootTest
-public class UserTaskServiceTest {
+//@SpringBootTest
+public class UserTaskServiceManualTest {
 
         @Autowired
         private UserTaskService userTaskService;

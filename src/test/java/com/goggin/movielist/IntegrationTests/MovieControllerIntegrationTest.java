@@ -1,4 +1,4 @@
-package com.goggin.movielist;
+package com.goggin.movielist.IntegrationTests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ import com.goggin.movielist.respositories.UserRepository;
 import com.goggin.movielist.service.EmailService;
 
 @WebMvcTest(MovieController.class)
-public class MovieControllerTest {
+public class MovieControllerIntegrationTest {
 
     private MockMvc mockMvc;
 

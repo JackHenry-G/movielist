@@ -59,7 +59,7 @@ public class UserTaskService {
         // setup user information
         String recipientUsername = user.getUsername();
         String recipientEmail = user.getEmail();
-        List<Place> localVueCinemas = googlePlacesApiService.getPlaceUrlFromGooglePlacesApiTextSearch("Vue Cinema",
+        List<Place> localVueCinemas = googlePlacesApiService.getPlaceFromGooglePlacesWithTextSearch("Vue Cinema",
                 8, user); // get user's local vue cinemas
         List<String> favFilmTitles = movieService
                 .getMoviesWhereRatingIsGreaterThan(recipientUsername, 9)

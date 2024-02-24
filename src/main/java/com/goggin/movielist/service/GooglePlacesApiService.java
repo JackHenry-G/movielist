@@ -1,5 +1,6 @@
 package com.goggin.movielist.service;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +25,11 @@ public class GooglePlacesApiService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public List<Place> getPlaceUrlFromGooglePlacesApiTextSearch(String textQuery, Integer maxResultCount, User user) {
+    public List<Place> getPlaceFromGooglePlacesWithTextSearch(String textQuery, Integer maxResultCount, User user) {
+        if (maxResultCount <= 0) {
+            throw new IllegalArgumentException("There can only be an amount of results great than zero");
+        }
+
         // configure API details
         String url = "https://places.googleapis.com/v1/places:searchText";
         String apiKey = "AIzaSyAuEBLhs17AGsxqD2ttmekY7Q0Fa3Vb6Ns";
@@ -56,11 +61,16 @@ public class GooglePlacesApiService {
                 PlaceResponse.class);
 
         if (responseEntity.getStatusCode().is2xxSuccessful() && responseEntity.getBody() != null) {
-            PlaceResponse responsebody = responseEntity.getBody();
-            log.info("Sucessful Google Places APi requestcode: {}",
-                    responseEntity.getStatusCode());
+            List<Place> places = responseEntity.getBody().getPlaces();
 
-            return responsebody.getPlaces();
+            if (places != null && !places.isEmpty()) {
+                log.info("Successful Google Places API request. Status code: {}", responseEntity.getStatusCode());
+                return places;
+            } else {
+                log.warn("Google Places API request successful but no places data found. Status code: {}",
+                        responseEntity.getStatusCode());
+                return Collections.emptyList(); // Return an empty list instead of null
+            }
         } else {
             log.error("Error while making the Google Places API request. Status code: {}",
                     responseEntity.getStatusCode());
