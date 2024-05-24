@@ -19,16 +19,4 @@ public class MovielistApplication {
 		log.info("App started running!");
 	}
 
-	@Configuration
-	@Profile("local")
-	@PropertySource("classpath:application-local.properties")
-	static class LocalConfig {
-	}
-
-	@Configuration
-	@Profile("docker")
-	@PropertySource("classpath:application-docker.properties")
-	static class DockerConfig {
-	}
-
 }
