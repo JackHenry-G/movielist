@@ -1,5 +1,7 @@
 package com.goggin.movielist.controller;
 
+import com.goggin.movielist.model.MovieConnection;
+import com.goggin.movielist.respositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -20,9 +22,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Controller
 @Slf4j
 public class AuthenticationController {
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private UserService userService;
@@ -49,9 +58,40 @@ public class AuthenticationController {
     }
 
     @GetMapping("/profile")
-    public String getProfile(Model model) {
-        model.addAttribute("user", userService.getCurrentUser());
+    public String getProfile(Model model, Principal principal) {
+        User currentUser = userService.getCurrentUser();
+
+        // find all movies
+        List<MovieConnection> movies = movieService.getMovieConnectionsByUsernameInRatingOrder(principal.getName());
+
+        // count which year occurs the most
+        Map<String, Integer> releaseYearCount = new HashMap<>();
+        for (MovieConnection movieConnection : movies) {
+            String releaseYear = movieConnection.getMovie().getReleaseYear();
+            releaseYearCount.put(releaseYear, releaseYearCount.getOrDefault(releaseYear, 0) + 1);
+        }
+
+        // set that as favouriteReleaseYear
+        currentUser.setFavouriteReleaseYear(getYearWithHighestCount(releaseYearCount));
+        userRepository.save(currentUser); // persist to DB
+
+        model.addAttribute("user", currentUser);
+
         return "profile.html";
+    }
+
+    private static String getYearWithHighestCount(Map<String, Integer> releaseYearCount) {
+        String maxYear = null;
+        int maxCount = 0;
+
+        for (Map.Entry<String, Integer> entry : releaseYearCount.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                maxYear = entry.getKey();
+            }
+        }
+
+        return maxYear;
     }
 
     // -------------------------- testing purposes, quickly signup test user

@@ -67,13 +67,15 @@ public class MovieController {
 
     // return search page
     @GetMapping("/search")
-    public String showSearchPage() {
+    public String showSearchPage(Model model) {
+        System.out.println("Current user = " + userService.getCurrentUser().toString());
+        model.addAttribute("user", userService.getCurrentUser());
         return "searchTmdb.html";
     }
 
-    @GetMapping("/search/movies")
-    public ResponseEntity<List<TmdbResponseResult>> searchTmdbForMovies(@RequestParam String movieTitle, Model model) {
-        log.info("Query request param (movie title) = ", movieTitle);
+    @GetMapping("/search/moviesByTitle")
+    public ResponseEntity<List<TmdbResponseResult>> searchTmdbForMoviesByTitle(@RequestParam String movieTitle, Model model) {
+        log.info("Query request param (movie title) = {}", movieTitle);
 
         try {
             List<TmdbResponseResult> movies = tmdbApiService.getMoviesFromTmdbByTitle(movieTitle);
@@ -87,6 +89,23 @@ public class MovieController {
         }
     }
 
+    @GetMapping("/search/moviesByReleaseYear")
+    public ResponseEntity<List<TmdbResponseResult>> searchTmdbForMoviesByReleaseYear(@RequestParam String releaseYear, Model model) {
+        log.info("Query request param (release year) = {}", releaseYear);
+
+        try {
+            List<TmdbResponseResult> movies = tmdbApiService.getMoviesFromTmdbByYear(releaseYear);
+            if (movies != null) {
+                return new ResponseEntity<>(movies, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT); // or HttpStatus.NOT_FOUND
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
     // ------------------------ Add a new movie -----------------------
 
     // return form for user to add a new movie based on their chosen TMDB movie
@@ -97,6 +116,7 @@ public class MovieController {
         try {
             // call tmdb to get all details of movie
             Movie tmdbMovie = tmdbApiService.getMovieDetailsFromTmdbById(tmdbMovieId);
+            log.info("Movie added to user: " + tmdbMovie.toString());
 
             Movie usersListMovie = movieService.addMovieToUsersList(userService.getCurrentUser(), tmdbMovie,
                     rating);
