@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org"
+  lang="en"
+>
   <head>
     <meta charset="UTF-8" />
     <title>Movie List App!</title>
@@ -9,6 +13,7 @@
       src="https://kit.fontawesome.com/eb7c358919.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" href="/images/moviilist.png" type="image/png" />
   </head>
   <body>
     <div th:replace="~{fragments/pageSetup.html :: frame}"></div>
@@ -39,6 +44,14 @@
             name="username"
             placeholder="Username..."
             th:value="${user.username}"
+          />
+
+          <label for="favouriteReleaseYear">Favourite Release Year:</label>
+          <input
+            type="text"
+            name="favouriteReleaseYear"
+            placeholder="..."
+            th:value="${user.favouriteReleaseYear}"
           />
 
           <button type="submit">Save</button>

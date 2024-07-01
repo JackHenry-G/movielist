@@ -190,6 +190,17 @@ h3 {
   font-size: 20px;
 }
 
+.search-button-favourites {
+  border: 1px solid #fff;
+  padding: 5px;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
 #searchResultsGrid {
   display: flex;
   overflow-x: scroll;

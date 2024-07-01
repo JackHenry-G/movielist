@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Movie List App!</title>
@@ -9,11 +9,21 @@
       src="https://kit.fontawesome.com/eb7c358919.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" href="/images/moviilist.png" type="image/png" />
   </head>
   <body style="overflow-y: auto">
     <div th:replace="~{fragments/pageSetup.html :: frame}"></div>
 
     <div class="content">
+      <div class="search-favourites">
+        <button
+          type="button"
+          th:onclick="performSearchFavourite([[${user.favouriteReleaseYear}]])"
+          class="search-button-favourites"
+        >
+          Favourite year
+        </button>
+      </div>
       <div class="search-bar">
         <input
           type="text"
@@ -81,8 +91,35 @@
 
       const baseUrl = window.location.origin; // Get the current origin (e.g., http://localhost:3000)
       console.log("Base URL = " + baseUrl);
-      const url = `${baseUrl}/search/movies?movieTitle=${encodeURIComponent(
+      const url = `${baseUrl}/search/moviesByTitle?movieTitle=${encodeURIComponent(
         searchTerm
+      )}`;
+      console.log("New URL = " + url);
+
+      fetch(url, options)
+        .then((response) => response.json())
+        .then((response) => displaySearchResults(response)) // logging the response
+        .catch((err) => console.error(err));
+    }
+
+    function performSearchFavourite(favouriteReleaseYear) {
+      // Get the value from the input field
+      console.log("Search term:", favouriteReleaseYear);
+
+      // https://developer.themoviedb.org/reference/search-movie
+      const options = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxY2ZlZDIxNjQ2NjY2Yzk5YjNlZjA2NDZlMjg5MTFkYyIsInN1YiI6IjY1NWZhMzQ5NzA2ZTU2MDEzOGMyMDk2YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vgOOTsReFyIncA0dEgC-LmyvvsniZrHQW7n0reCUPvc",
+        },
+      };
+
+      const baseUrl = window.location.origin; // Get the current origin (e.g., http://localhost:3000)
+      console.log("Base URL = " + baseUrl);
+      const url = `${baseUrl}/search/moviesByReleaseYear?releaseYear=${encodeURIComponent(
+        favouriteReleaseYear
       )}`;
       console.log("New URL = " + url);
 
